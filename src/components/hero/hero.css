@@ -1,0 +1,60 @@
+.banner-image {
+  object-fit: cover;
+  width: 100vw;
+  max-height: 92vh;
+  block-size: 100%;
+}
+.responsive-banner {
+  position: relative;
+  height: 92vh;
+  background-color: black;
+  position: relative;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  padding: 20px;
+  color: white;
+  position: absolute;
+}
+
+.banner-overlay h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  letter-spacing: -1px;
+  text-shadow: 0 10px 10px rgb(0, 0, 0);
+}
+
+.banner-button {
+  background-color: rgba(210, 180, 9, 0.973);
+  color: white;
+  border: none;
+  font-weight: bolder;
+  padding: 10px 20px;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.587);
+  height: 60px;
+  width: 200px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: -2px;
+}
+
+.banner-button:hover {
+  background-color: rgba(161, 138, 8, 0.973);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1) translateZ(20px);
+}
+.banner-button:active {
+  background-color: rgba(210, 180, 9, 0.973);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  transform: translateY(-5px);
+}
