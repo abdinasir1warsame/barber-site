@@ -1,6 +1,6 @@
 import Hero from './components/hero/hero';
 import NavBar from './components/navBar/navBar';
-
+import Employee from './components/barber-employees/employee';
 import Intro from './components/intro/intro';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <NavBar />
       <Hero />
       <Intro />
+      <Employee />
     </div>
   );
 }

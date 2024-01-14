@@ -1,0 +1,116 @@
+@import url('../../index.css');
+.employee-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: WHITE;
+}
+.barber-card {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.barber-card .poster {
+  position: relative;
+  overflow: hidden;
+}
+.barber-card .poster::before {
+  content: '';
+  position: absolute;
+  bottom: -145px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, BLACK 50%, transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+.barber-card:hover .poster::before {
+  bottom: 0px;
+}
+.barber-card .poster img {
+  width: 100%;
+  transition: 0.5s;
+}
+.barber-card:hover .poster img {
+  transform: translateY(-50px);
+  filter: blur(5px);
+}
+
+.barber-card .barber-details {
+  position: absolute;
+  width: 100%;
+  bottom: -278px;
+  left: 0;
+  z-index: 2;
+  padding: 20px;
+  transition: 0.5s;
+}
+.barber-card:hover .barber-details {
+  bottom: 0px;
+  cursor: pointer;
+}
+.barber-name {
+  text-shadow: 0 4px 8px rgba(161, 138, 8, 0.973);
+  color: #fff;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+.barber-card .barber-details .barber-logo {
+  max-width: 300px;
+}
+.barber-card .barber-details .barber-description {
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
+  font-weight: lighter;
+}
+.ratings {
+  color: rgba(210, 180, 9, 0.884);
+  font-size: 1em;
+}
+.ratings-icons {
+  text-shadow: 0 4px 8px rgba(132, 113, 5, 0.884);
+  color: rgba(210, 180, 9, 0.884);
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+.ratings-score {
+  position: relative;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+.barber-info p {
+  color: #fff;
+  margin-top: 5px;
+  font-size: 1em;
+  max-width: 95%;
+  align-items: center;
+  text-align: start;
+  text-shadow: 0 2px 8px rgb(193, 183, 162);
+}
+.barber-card .barber-details .avalibility span {
+  padding: 2px 5px;
+  color: #fff;
+  background-color: rgba(161, 138, 8, 0.973);
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: bold;
+  text-shadow: 0 4px 8px #fff;
+  margin-right: 5px;
+}
+.avalibility-title {
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  font-size: 1.2em;
+  text-shadow: 0 4px 8px #fff;
+}

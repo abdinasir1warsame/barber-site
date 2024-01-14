@@ -31,7 +31,7 @@ li a {
   text-decoration: none;
   color: white;
   transition: all 0.5s ease;
-  font-size: 1.5rem; /* Increased font size for nav links */
+  font-size: 1.2rem; /* Increased font size for nav links */
   font-weight: bolder;
   text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
 }
@@ -50,12 +50,11 @@ li:hover {
 .nav-logo {
   height: 85px; /* Increased logo size */
   transition: all 0.5s ease;
-  align-items: center;
-
+  margin-top: 25px;
   color: WHITE;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: bolder;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
 }
 

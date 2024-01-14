@@ -1,3 +1,5 @@
+@import url('../../index.css');
+
 .banner-image {
   object-fit: cover;
   width: 100vw;
@@ -24,11 +26,11 @@
 }
 
 .banner-overlay h1 {
-  font-size: 60px;
+  font-size: 65px;
   margin-bottom: 10px;
   font-weight: bolder;
   letter-spacing: -1px;
-  text-shadow: 0 10px 10px rgb(0, 0, 0);
+  text-shadow: 0 2px 8px rgb(169, 161, 143);
 }
 
 .banner-button {
@@ -37,11 +39,11 @@
   border: none;
   font-weight: bolder;
   padding: 10px 20px;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.587);
-  height: 60px;
-  width: 200px;
+  height: 50px;
+  width: 160px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   letter-spacing: -2px;

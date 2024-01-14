@@ -1,5 +1,5 @@
 .intro-section {
-  height: 25vh;
+  height: 22vh;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
       black 0%,
@@ -31,11 +31,11 @@
   width: 45vw;
 }
 .intro-text {
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   font-weight: bold;
   color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 10px 10px rgb(0, 0, 0);
 }
 #color-change {
   color: black;
