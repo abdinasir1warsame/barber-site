@@ -30,18 +30,18 @@
   margin-bottom: 10px;
   font-weight: bolder;
   letter-spacing: -1px;
-  text-shadow: 0 2px 8px rgb(169, 161, 143);
+  text-shadow: 0 2px 8px rgb(0, 0, 0);
 }
 
 .banner-button {
-  background-color: rgba(210, 180, 9, 0.973);
+  background-color: rgba(161, 138, 8, 0.973);
   color: white;
   border: none;
   font-weight: bolder;
   padding: 10px 20px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.587);
+  box-shadow: 0 10px 20px rgba(240, 239, 232, 0.973);
   height: 50px;
   width: 160px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
@@ -50,13 +50,20 @@
 }
 
 .banner-button:hover {
-  background-color: rgba(161, 138, 8, 0.973);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background-color: rgba(210, 180, 9, 0.973);
+  box-shadow: 0 10px 20px rgba(240, 239, 232, 0.973);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transform: scale(1.1) translateZ(20px);
 }
+
+.banner-button:hover span {
+  transform: scale(1.1);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
 .banner-button:active {
-  background-color: rgba(210, 180, 9, 0.973);
+  background-color: rgba(161, 138, 8, 0.973);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
   transform: translateY(-5px);
 }
