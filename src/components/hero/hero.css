@@ -1,5 +1,5 @@
 @import url('../../index.css');
-
+/* banneer styles */
 .banner-image {
   object-fit: cover;
   width: 100vw;
@@ -26,44 +26,96 @@
 }
 
 .banner-overlay h1 {
-  font-size: 65px;
+  font-size: 60px;
   margin-bottom: 10px;
   font-weight: bolder;
   letter-spacing: -1px;
-  text-shadow: 0 2px 8px rgb(0, 0, 0);
+  text-shadow: 0 10px 10px rgb(0, 0, 0);
 }
 
 .banner-button {
-  background-color: rgba(161, 138, 8, 0.973);
+  background: linear-gradient(
+    to bottom right,
+
+    #ffffac 5%,
+    #d1b464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background-size: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px white; /* Add a subtle box shadow */
+  background-size: cover;
   color: white;
   border: none;
   font-weight: bolder;
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(240, 239, 232, 0.973);
+  border-radius: 5px;
   height: 50px;
-  width: 160px;
+  width: 170px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   letter-spacing: -2px;
+  margin-top: 10px;
 }
 
 .banner-button:hover {
-  background-color: rgba(210, 180, 9, 0.973);
-  box-shadow: 0 10px 20px rgba(240, 239, 232, 0.973);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transform: scale(1.1) translateZ(20px);
-}
-
-.banner-button:hover span {
-  transform: scale(1.1);
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.banner-button:active {
   background-color: rgba(161, 138, 8, 0.973);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1) translateZ(20px);
+  font-size: 27px;
+}
+.banner-button:active {
+  background-color: rgba(210, 180, 9, 0.973);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
   transform: translateY(-5px);
+}
+
+.intro-section {
+  height: 25vh;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    ),
+    black;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative; /* or absolute, based on your design */
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  font-size: 22px;
+  padding: 10px;
+}
+.intro {
+  width: 50vw;
+}
+.intro-text {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+#color-change {
+  color: black;
 }

@@ -1,20 +1,98 @@
-@import url('../../index.css');
 .employee-section {
+  position: relative;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-
+  background-color: WHITE;
+  padding: 40px;
 }
 .barber-card {
   position: relative;
-  width: 480px;
-  height: 480px;
+  width: 400px;
+  height: 400px;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  overflow: visible;
+}
+.overflow-g {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  border-radius: 8px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+}
+/* Adjust initial positioning */
+.book-now {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+
+  bottom: 255px; /* Adjust as needed */
+  right: -70%;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: bolder;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+  border-radius: 3px;
+  opacity: 0;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.818),
+    /* Inner shadow */ 0 0 3em rgba(0, 0, 0, 0.811); /* Outer shadow */
+  z-index: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+
+  text-shadow: 0 4px 8px black;
+}
+
+/* Keep transition only within the hover state */
+.barber-card:hover .book-now {
+  opacity: 1;
+  bottom: 160px; /* Adjust as needed */
+  right: -39%;
+  /* width: 200px;
+  height: 200px; */
+  border-radius: 50%;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+  transition: opacity ease 0.8s, right ease 0.8s;
+  cursor: pointer;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.5),
+    /* Inner shadow */ 0 0 3em rgba(0, 0, 0, 0.5); /* Outer shadow */
+}
+
+.booking-now-text {
+  color: rgb(253, 253, 253);
+  text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.booking-icon {
+  font-size: 30px;
+  color: white;
 }
 .barber-card .poster {
   position: relative;
@@ -23,7 +101,7 @@
 .barber-card .poster::before {
   content: '';
   position: absolute;
-  bottom: -145px;
+  bottom: -190px;
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, BLACK 50%, transparent);
@@ -35,7 +113,7 @@
 }
 .barber-card .poster img {
   width: 100%;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 .barber-card:hover .poster img {
   transform: translateY(-50px);
@@ -45,57 +123,54 @@
 .barber-card .barber-details {
   position: absolute;
   width: 100%;
-  bottom: -278px;
+  bottom: -250px;
   left: 0;
   z-index: 2;
   padding: 20px;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 .barber-card:hover .barber-details {
   bottom: 0px;
-  cursor: pointer;
+  cursor: auto;
 }
 .barber-name {
   text-shadow: 0 4px 8px rgba(161, 138, 8, 0.973);
   color: #fff;
-  font-size: 1.8em;
-  margin-bottom: 5px;
+  font-size: 1em;
 }
 .barber-card .barber-details .barber-logo {
-  max-width: 300px;
+  max-width: 250px;
 }
 .barber-card .barber-details .barber-description {
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   width: 100%;
   font-weight: lighter;
 }
 .ratings {
   color: rgba(210, 180, 9, 0.884);
-  font-size: 1em;
+  font-size: 0.5em;
 }
 .ratings-icons {
   text-shadow: 0 4px 8px rgba(132, 113, 5, 0.884);
   color: rgba(210, 180, 9, 0.884);
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 10px 0;
 }
 .ratings-score {
   position: relative;
   padding: 10px 0;
   color: #fff;
-  font-size: 1.3em;
-  margin-left: 5px;
+  font-size: 1em;
 }
 
 .barber-info p {
   color: #fff;
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 1em;
   max-width: 95%;
   align-items: center;
   text-align: start;
-  text-shadow: 0 2px 8px rgb(193, 183, 162);
 }
 .barber-card .barber-details .avalibility span {
   padding: 2px 5px;
@@ -105,12 +180,12 @@
   font-size: 1em;
   font-weight: bold;
   text-shadow: 0 4px 8px #fff;
-  margin-right: 5px;
+  margin-right: 4px;
 }
 .avalibility-title {
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: 10px;
-  font-size: 1.2em;
+  font-size: 0.7em;
   text-shadow: 0 4px 8px #fff;
 }

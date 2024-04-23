@@ -1,0 +1,298 @@
+/* navbar styles */
+.main-nav {
+  width: 100%;
+  height: 8vh; /* Increased navbar height */
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 15px;
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+  font-size: 1.5rem; /* Increased font size for nav links */
+  font-weight: bolder;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+  transform: scale(1.1);
+}
+
+.nav-links li:hover {
+  animation: swing 0.5s ease-in-out forwards;
+}
+
+.home {
+  color: rgba(210, 180, 9, 0.884);
+}
+
+.nav-logo {
+  height: 85px; /* Increased logo size */
+  transition: all 0.5s ease;
+  align-items: center;
+  color: WHITE;
+  font-size: 3rem;
+  font-weight: bolder;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+/*  */
+
+.displaybox {
+  width: 95vw;
+  padding: 10px;
+  margin: 100px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15),
+    1px 1px 1px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.dis {
+  height: 400px;
+  width: 400px;
+  margin: 40px 0 60px 0;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05),
+    1px 1px 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
+}
+
+.dis1 {
+  background: url('./beard\ oil2.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
+}
+
+.dis2 {
+  background: url('./product-img/beard\ oil\ 1.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
+}
+
+.dis3 {
+  background: url('./product-img/clippers.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
+}
+
+.dis4 {
+  background: url('./product-img/hair\ gell.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
+}
+
+.dis5 {
+  background: url('./product-img/hair\ sponge.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
+}
+
+.dis6 {
+  background: url('./product-img/clippers\ 1.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
+}
+
+.dislogo {
+  height: 80px;
+  width: 80px;
+  background-color: black;
+  margin-left: 15px;
+  /* border-radius: 100%; */
+  /* border: solid 3px white; */
+  /* box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.15),
+      1px 1px 3px rgba(0, 0, 0, 0.15); */
+  z-index: 500;
+  transition: all ease 0.5s;
+  float: left;
+}
+
+.dislogo1 {
+  background: url('./product-img/perfect\ logo.png') no-repeat center center;
+  background-size: 100%;
+  /* background-color: black; */
+}
+
+.disdis {
+  float: left;
+  font-size: 13px;
+  margin-left: 10px;
+  opacity: 0;
+  transition: all ease 0.5s;
+  margin-top: 10px;
+  z-index: 20;
+  position: relative;
+}
+
+.distopwrap {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  transition: all ease 0.5s;
+  z-index: 20;
+}
+.company-name {
+  color: rgba(161, 138, 8, 0.973);
+}
+.disprice {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px;
+  margin: 10px;
+  background: linear-gradient(
+    to bottom right,
+
+    #ffffac 5%,
+    #d1b464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  transition: all ease 0.5s;
+  box-shadow: 0 0 0.75em rgba(0, 0, 0, 0.5),
+    /* Inner shadow */ 0 0 1em rgba(0, 0, 0, 0.5); /* Outer shadow */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
+}
+
+.disbut {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(20, 20, 20, 0.7);
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  opacity: 0;
+  border: none;
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  transition: all ease 0.5s;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05),
+    1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.faspace {
+  margin-right: 10px;
+}
+
+.roll:hover .distopwrap {
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+  transition: all ease 0.5s;
+}
+
+.roll:hover .disdis {
+  opacity: 1;
+  transition: all ease 0.5s;
+}
+
+.roll:hover .disprice {
+  opacity: 1;
+  transition: all ease 0.5s;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+.roll:hover .disbut {
+  opacity: 1;
+  transition: all ease 0.5s;
+  -webkit-transform: translateY(60px);
+  transform: translateY(60px);
+}
+
+.disbut:hover {
+  background: linear-gradient(
+    to bottom right,
+
+    #ffffac 5%,
+    #d1b464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background-size: cover;
+  transition: all ease 0.5s;
+  box-shadow: 0 0 0.75em rgba(0, 0, 0, 0.5),
+    /* Inner shadow */ 0 0 1em rgba(0, 0, 0, 0.5); /* Outer shadow */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
+}
+/* @media screen and (min-width: 1800px) {
+  .dis {
+    height: 500px;
+    width: 500px;
+  }
+  .dislogo {
+    height: 180px;
+    width: 180px;
+  }
+  .disprice {
+    font-size: 28px;
+
+    margin: 30px;
+  }
+  .disdis {
+    font-size: 25px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+  }
+  .disbut {
+    font-size: 22px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  .dis {
+    height: 300px;
+    width: 300px;
+  }
+} */
