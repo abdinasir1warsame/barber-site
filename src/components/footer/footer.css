@@ -1,0 +1,34 @@
+footer {
+  text-align: center;
+  color: #fff;
+  padding: 25px 0;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #000000 8%,
+      /* black */ #000000 30%,
+      /* black */ #000000 40%,
+      /* black */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #000000 8%,
+      /* black */ #000000 25%,
+      /* black */ rgba(168, 144, 5, 0.973) 62.5%,
+      /* gold */ rgba(133, 114, 5, 0.973) 100% /* gold */
+    );
+
+  height: 10vh;
+  margin-top: 15rem;
+}
+
+footer .copyright {
+  margin-bottom: 0.3rem;
+}
+
+footer .credits {
+  margin-bottom: 0;
+}
+
+footer .credits a {
+  color: #fff;
+}

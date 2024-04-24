@@ -66,7 +66,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transform: scale(1.1) translateZ(20px);
-  font-size: 27px;
+  font-size: 24px;
 }
 .banner-button:active {
   background-color: rgba(210, 180, 9, 0.973);
@@ -78,21 +78,18 @@
   height: 25vh;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
-
-      #fdb931 8%,
-      #9f7928 30%,
-      #8a6e2f 40%,
-      transparent 80%
+      #000000 8%,
+      /* black */ #000000 30%,
+      /* black */ #000000 40%,
+      /* black */ transparent 80%
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-
-      #ffffac 8%,
-      #d1b464 25%,
-      #5d4a1f 62.5%,
-      #5d4a1f 100%
-    ),
-    black;
+      #000000 8%,
+      /* black */ #000000 25%,
+      /* black */ #b8860b 62.5%,
+      /* gold */ #b8860b 100% /* gold */
+    );
   background-size: cover;
   display: flex;
   flex-direction: row;

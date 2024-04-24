@@ -1,11 +1,14 @@
+.employee-container {
+  min-height: 100vh;
+}
 .employee-section {
   position: relative;
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  min-height: 100vh;
+  /* align-items: center; */
+
   background-color: WHITE;
   padding: 40px;
 }
@@ -188,4 +191,42 @@
   margin-top: 10px;
   font-size: 0.7em;
   text-shadow: 0 4px 8px #fff;
+}
+/*--/ Title A /--*/
+.title-box {
+  margin-top: 13rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #1e1e1e;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  font-weight: bolder;
+}
+
+.title-a {
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+}
+
+.subtitle-a {
+  text-decoration: none;
+  color: #4e4e4e;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.line-mf {
+  width: 10vw;
+  height: 5px;
+  background-color: #a0a7ac;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.section-sep {
+  width: 70vw;
+  height: 1px;
+  background-color: rgba(168, 144, 5, 0.973);
+  margin: 0 auto;
+  margin-top: 10rem;
 }

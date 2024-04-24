@@ -6,6 +6,7 @@ import Bookings from './components/bookings/bookings';
 import PricingAndStylesPage from './components/pricingAndStyles/pricingAndStyles';
 import Products from './components/products/products';
 import Faq from './components/faqs/faq';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <PricingAndStylesPage />
       <Products />
       <Faq />
+
       <Bookings />
+      <Footer />
     </div>
   );
 }
