@@ -8,20 +8,20 @@ const PricingAndStylesPage = () => {
     <div>
       <div className="col-sm-12">
         <div className="title-box2 ">
-          <h3 className="title-a">Explore Our Signature Cuts and Trends</h3>
+          <h3 className="title-a"> Signature Cuts and Trends</h3>
           <p className="subtitle-a">
-            Unlock Inspiration: Browse Through Our Diverse Collection of
-            Haircuts, From Classic to Contemporary, Alongside Transparent
-            Pricing, and Find Your Next Look!
+            Browse Through Our Diverse Collection of Haircuts, From Classic to
+            Contemporary, Alongside Transparent Pricing, and Find Your Next
+            Look!
           </p>
-          <div className="line-mf"></div>
+          <div className="line-mf2"></div>
         </div>
       </div>
       <div className="pricing-and-styles">
         <PricingMenu></PricingMenu>
         <CarouselComponent></CarouselComponent>
       </div>
-      <div className="section-sep"></div>
+      <div className="section-sep2"></div>
     </div>
   );
 };

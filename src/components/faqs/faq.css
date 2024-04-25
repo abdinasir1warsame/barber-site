@@ -6,7 +6,7 @@
 
   margin-left: 5rem;
 }
-.container {
+.faq-container {
   display: flex;
   flex-direction: row;
   width: 60%;
@@ -183,4 +183,39 @@ summary:after {
   padding: 0;
   text-align: center;
   width: 25px;
+}
+.title-box3 {
+  margin-top: 9rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #1e1e1e;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  font-weight: bolder;
+}
+
+.title-a {
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+}
+
+.subtitle-a {
+  text-decoration: none;
+  color: #4e4e4e;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.line-mf3 {
+  width: 43vw;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    rgba(156, 134, 8, 0),
+    rgba(156, 134, 8, 0.884),
+    rgba(156, 134, 8, 0)
+  );
+  margin: 0 auto;
+  margin-top: 1.5rem;
 }

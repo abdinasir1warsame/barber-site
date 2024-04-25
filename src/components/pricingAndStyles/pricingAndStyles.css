@@ -439,7 +439,7 @@
 }
 /*--/ Title A /--*/
 .title-box2 {
-  margin-top: 9rem;
+  margin-top: 10rem;
   margin-bottom: 3rem;
   text-align: center;
   color: #1e1e1e;
@@ -461,12 +461,25 @@
   font-size: 1.2rem;
 }
 
-.line-mf {
-  width: 10vw;
-  height: 5px;
-  background-color: rgba(156, 134, 8, 0.884);
+.line-mf2 {
+  width: 75vw;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    rgba(156, 134, 8, 0),
+    rgba(156, 134, 8, 0.884),
+    rgba(156, 134, 8, 0)
+  );
   margin: 0 auto;
   margin-top: 1.5rem;
+}
+
+.section-sep2 {
+  width: 70vw;
+  height: 1px;
+  background-color: rgba(168, 144, 5, 0.973);
+  margin: 0 auto;
+  margin-top: 7rem;
 }
 @media screen and (max-width: 678px) {
   .pricing-and-styles {

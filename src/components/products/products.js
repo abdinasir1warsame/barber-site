@@ -5,7 +5,7 @@ const Products = () => {
   return (
     <div>
       <div className="col-sm-12">
-        <div className="title-box2 ">
+        <div className="title-box3 ">
           <h3 className="title-a">Premium Grooming Essentials</h3>
           <p className="subtitle-a">
             From Beard Care to Styling Essentials: Discover Quality Products to

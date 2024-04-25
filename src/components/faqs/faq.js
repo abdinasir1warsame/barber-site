@@ -5,18 +5,18 @@ const Faq = () => {
   return (
     <div>
       <div className="col-sm-12">
-        <div className="title-box2 ">
+        <div className="title-box3 ">
           <h3 className="title-a">Got Questions? We Have Answers!</h3>
           <p className="subtitle-a">
             Find Solutions to Your Queries About Our Services, Booking Process,
             and More!
           </p>
-          <div className="line-mf"></div>
+          <div className="line-mf3"></div>
         </div>
       </div>
 
       <div className=" faq-title-section">
-        <div className="container">
+        <div className="faq-container">
           <div className="image-half"></div>
           <div className="empty-half"></div>
           <div className="text-overlay">
