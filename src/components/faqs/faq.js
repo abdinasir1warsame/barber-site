@@ -21,6 +21,7 @@ const Faq = () => {
           <div className="empty-half"></div>
           <div className="text-overlay">
             <div className="main-text">FREQUENTLY ASKED</div>
+
             <div className="sub-text">QUESTIONS</div>
           </div>
         </div>

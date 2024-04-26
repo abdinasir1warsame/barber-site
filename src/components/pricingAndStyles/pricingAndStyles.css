@@ -4,15 +4,14 @@
   justify-content: center;
   align-items: center;
   width: 97vw;
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 /* pricing */
 
 .menu {
   display: none;
   padding: 20px;
-  padding-top: 0;
-  padding-bottom: 0;
+  /* border: rgba(134, 133, 133, 0.387) solid 1px; */
 }
 
 .menu--is-visible {
@@ -75,22 +74,24 @@
 
 .buttons-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 35px;
+  margin-bottom: 100px;
 }
-
+.pricing-container {
+  width: 47.5%;
+}
 /* @media (min-width: 768px) {
   .buttons-container {
     margin-bottom: 60px;
   }
 } */
 
-.button {
+.pricing-button-active {
   margin: 5px 15px;
   padding: 10px 20px;
   /* border: 3px solid rgba(210, 180, 9, 0.884); */
-  border-radius: 3px;
+  border-radius: 5px;
   color: black;
 
   text-shadow: 0 5px 10px rgba(255, 255, 255, 0.962);
@@ -99,10 +100,55 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 20px;
-  width: 250px;
-  height: 60px;
-}
+  width: 220px;
+  height: 58px;
+  background: linear-gradient(
+    to bottom right,
 
+    #ffffac 5%,
+    #d1b464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+  background-size: cover;
+  transition: all ease 0.5s;
+  box-shadow: 0 0 0.75em rgba(0, 0, 0, 0.5),
+    /* Inner shadow */ 0 0 1em rgba(0, 0, 0, 0.5); /* Outer shadow */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.pricing-button {
+  margin: 5px 15px;
+  padding: 10px 20px;
+  /* border: 3px solid rgba(210, 180, 9, 0.884); */
+  border-radius: 5px;
+  color: black;
+
+  text-shadow: 0 5px 10px rgba(255, 255, 255, 0.962);
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 20px;
+  width: 220px;
+  height: 58px;
+  background: linear-gradient(
+    to bottom right,
+    #e5e5e5 5%,
+    /* Light gray */ #a6a6a6 25%,
+    /* Medium gray */ #3c3c3c 62.5%,
+    /* Dark gray */ #3c3c3c 100% /* Dark gray */
+  );
+  background-size: cover;
+  transition: all ease 0.5s;
+
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
 .pricing {
   min-height: 100vh;
   display: flex;
@@ -121,6 +167,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px;
+  padding-top: 0;
 }
 
 /* new carousel */

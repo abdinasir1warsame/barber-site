@@ -1,0 +1,116 @@
+.faq-title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: 8rem;
+  height: 70vh;
+  margin-left: 5rem;
+}
+.faq-container {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 70vh;
+  position: relative;
+  text-align: start;
+}
+
+.contact-image-half,
+.empty-half {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.contact-image-half {
+  background: url('./barber-chair.avif') center center no-repeat;
+  background-size: cover;
+
+  width: 40vw;
+}
+
+.text-overlay {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.377);
+}
+.empty-half-text-container {
+  margin-top: 12rem;
+  margin-left: 10px;
+}
+.empty-half-text-container {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-image-text {
+  font-size: 53px;
+  background: white;
+  color: black;
+  margin: 0;
+  z-index: 2;
+  margin-bottom: 4px;
+  font-weight: bolder;
+}
+
+.contact-sub-text {
+  font-size: 30px;
+  background: white;
+  color: black;
+  margin: 0;
+
+  z-index: 2;
+  font-weight: bolder;
+}
+/* contact info section */
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100vw;
+  font-size: 20px;
+  margin-top: 40px;
+  letter-spacing: 0.5px;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+}
+.contact-titles {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.211);
+}
+.contact-and-hours-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5rem;
+  width: 60%;
+}
+.opening-day-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contact-day {
+  font-weight: bolder;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.188);
+}
+.opening-hours {
+  width: 300px;
+}

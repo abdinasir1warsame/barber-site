@@ -76,7 +76,7 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 67px;
   align-items: center;
 }
 .datepicker {
@@ -104,40 +104,40 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
+  color: white;
   cursor: pointer;
-  background-color: #e0e0e0;
+  background-color: #e0e0e000;
   border-radius: 10px;
   transition: all 0.3s ease;
-  min-width: 140px;
+  min-width: 130px;
   height: 55px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 22px;
+  font-size: 19px;
   width: 100%;
   font-weight: bolder;
-  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.927);
+  text-shadow: 0 2px 4px rgba(252, 240, 240, 0.535);
 }
 
 .time-slot:hover {
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
-      #000000 8%,
-      #111111 30%,
-      #222222 40%,
-      transparent 80%
+      #3b3012 8%,
+      /* black */ #52441c 30%,
+      /* dark grey */ #52441c 40%,
+      /* darker grey */ transparent 80%
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-      #000000 8%,
-      #111111 25%,
-      #3f3f3f 62.5%,
-      #464646 100%
+      #3b3012 8%,
+      /* black */ #493c18 30%,
+      /* dark grey */ #ac924b 62.5%,
+      /* darker grey */ #695828 100% /* darker grey */
     );
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  box-shadow: none;
   text-shadow: 0 8px 16px rgba(120, 118, 118, 0.686);
 }
 .right .time-option {
@@ -196,17 +196,17 @@
 .modal-btn:hover {
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
-      #000000 8%,
-      #111111 30%,
-      #222222 40%,
-      transparent 80%
+      #3b3012 8%,
+      /* black */ #52441c 30%,
+      /* dark grey */ #52441c 40%,
+      /* darker grey */ transparent 80%
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-      #000000 8%,
-      #111111 25%,
-      #252525 62.5%,
-      #2e2d2d 100%
+      #3b3012 8%,
+      /* black */ #493c18 30%,
+      /* dark grey */ #ac924b 62.5%,
+      /* darker grey */ #695828 100% /* darker grey */
     );
   color: white;
   transform: translateY(-2px);
@@ -256,19 +256,23 @@
 }
 
 input {
-  border-radius: 30px;
+  border-radius: 10px;
 
-  color: #fff !important;
-  font-size: 34px;
+  color: #fff;
+  font-size: 27px;
   letter-spacing: 1px;
-  width: 300px;
+  width: 100%;
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
   text-align: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   font-weight: bolder;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  text-shadow: 0 8px 16px rgba(83, 82, 82, 0.5);
 }
 
 input:focus {
@@ -302,17 +306,17 @@ button:focus {
 .datepicker {
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
-      #000000 8%,
-      #111111 30%,
-      #222222 40%,
-      transparent 80%
+      #3b3012 8%,
+      /* black */ #52441c 30%,
+      /* dark grey */ #52441c 40%,
+      /* darker grey */ transparent 80%
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-      #000000 8%,
-      #111111 25%,
-      #151515 62.5%,
-      #131313 100%
+      #3b3012 8%,
+      /* black */ #493c18 30%,
+      /* dark grey */ #ac924b 62.5%,
+      /* darker grey */ #695828 100% /* darker grey */
     );
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
   color: #fff !important;

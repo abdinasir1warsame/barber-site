@@ -7,6 +7,8 @@ import cardLogo from '../../assets/employee-card/MAIN-CROP.png';
 
 const Employee = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showServiceSelection, setShowServiceSelection] = useState(false);
+
   const [selectedBarberImage, setSelectedBarberImage] = useState(null);
   const [selectedBarberName, setSelectedBarberName] = useState('');
 
@@ -16,9 +18,13 @@ const Employee = () => {
     setShowModal(true);
     document.body.style.overflow = 'hidden';
   };
+  const handleContinue = () => {
+    setShowServiceSelection(true); // Show the service selection interface
+  };
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setShowServiceSelection(false);
     document.body.style.overflow = 'auto';
   };
   return (
@@ -221,83 +227,212 @@ const Employee = () => {
           style={{ display: showModal ? 'block' : 'none' }}
         >
           <div className="modal-dialog modal-xl" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h1 className="modal-title">CHOOSE A SERVICE</h1>
+            {showServiceSelection ? ( // Check if service selection interface should be shown
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title">CHOOSE A SERVICE</h1>
 
-                <button
-                  type="button"
-                  className="close"
-                  onClick={handleCloseModal}
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+                  <button
+                    type="button"
+                    className="close"
+                    onClick={handleCloseModal}
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
 
-              <div className="">
-                <div className="modal-main">
-                  <div className="booking-image-container">
-                    <img
-                      className="booking-image"
-                      src={selectedBarberImage}
-                      alt="Flag"
-                    />
-                  </div>
+                <div className="">
+                  <div className="modal-main">
+                    <div className="booking-image-container">
+                      <img
+                        className="booking-image"
+                        src={selectedBarberImage}
+                        alt="Flag"
+                      />
+                    </div>
 
-                  <div className="service-section">
-                    <div className="service-body">
-                      <h1 className="service-header">Select Your Service ✄</h1>
-                      <div className="services-container">
-                        <div className="service-container">
-                          <div className="service-btn">+</div>
-                          <p>Haircut & Styles</p>
-                          <p>£ 35.00</p>
-                        </div>
-                        <div className="service-container">
-                          <div className="service-btn">+</div>
-                          <p>Haircut & Styles</p>
-                          <p>£ 35.00</p>
-                        </div>
-                        <div className="service-container">
-                          <div className="service-btn">+</div>
-                          <p>Haircut & Styles</p>
-                          <p>£ 35.00</p>
-                        </div>
-                        <div className="service-container">
-                          <div className="service-btn">+</div>
-                          <p>Haircut & Styles</p>
-                          <p>£ 35.00</p>
-                        </div>
-                        <div className="service-container">
-                          <div className="service-btn">+</div>
-                          <p>Haircut & Styles</p>
-                          <p>£ 35.00</p>
+                    <div className="service-section">
+                      <div className="service-body">
+                        <h1 className="service-header">
+                          Select Your Service ✄
+                        </h1>
+                        <div className="services-container">
+                          <div className="service-container">
+                            <div className="service-btn">+</div>
+                            <p>Haircut & Styles</p>
+                            <p>£ 35.00</p>
+                          </div>
+                          <div className="service-container">
+                            <div className="service-btn">+</div>
+                            <p>Haircut & Styles</p>
+                            <p>£ 35.00</p>
+                          </div>
+                          <div className="service-container">
+                            <div className="service-btn">+</div>
+                            <p>Haircut & Styles</p>
+                            <p>£ 35.00</p>
+                          </div>
+                          <div className="service-container">
+                            <div className="service-btn">+</div>
+                            <p>Haircut & Styles</p>
+                            <p>£ 35.00</p>
+                          </div>
+                          <div className="service-container">
+                            <div className="service-btn">+</div>
+                            <p>Haircut & Styles</p>
+                            <p>£ 35.00</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="modal-btn-div">
-                <div className="employee-name-div">
-                  <h1 className="employee-name">{selectedBarberName}</h1>
+                <div className="modal-btn-div">
+                  <div className="employee-name-div">
+                    <h1 className="employee-name">{selectedBarberName}</h1>
+                  </div>
+                  <button className="modal-btn" onClick={handleCloseModal}>
+                    CHECKOUT
+                  </button>
                 </div>
-                <button className="modal-btn">CHECKOUT</button>
-              </div>
 
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn close"
-                  id="footer-btn"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn close"
+                    id="footer-btn"
+                    data-dismiss="modal"
+                    onClick={handleCloseModal}
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
-            </div>
-            ;
+            ) : (
+              <div className="modal-content bg-blur">
+                <div className="modal-header">
+                  <h1 className="modal-title">CHOOSE A TIME SLOT</h1>
+                  <button
+                    type="button"
+                    className="close"
+                    onClick={handleCloseModal}
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <div className="modal-main">
+                    <div className="booking-image-container">
+                      <img
+                        className="booking-image"
+                        src={selectedBarberImage}
+                        alt="Flag"
+                      />
+                    </div>
+                    <div className="calender-main row justify-content-center mx-0">
+                      <div className="date-card border-0">
+                        <form className="booking-form" autoComplete="off">
+                          <div className="card-header bg-dark">
+                            <div className="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
+                              <input
+                                type="text"
+                                id="dp1"
+                                className="datepicker"
+                                placeholder="Pick Your Date  📅"
+                                name="date"
+                                readOnly
+                              />
+                            </div>
+                          </div>
+                          <div className="slot-container">
+                            <div className="right-slots">
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">10:00 AM</div>
+                              </div>
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">11:00 AM</div>
+                              </div>
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">12:00 PM</div>
+                              </div>
+                            </div>
+                            <div className="middle-time">
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">1:00 PM</div>
+                              </div>
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">2:00 PM</div>
+                              </div>
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">3:00 PM</div>
+                              </div>
+                            </div>
+                            <div className="left-slots">
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">4:00 PM</div>
+                              </div>
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">5:00 PM</div>
+                              </div>
+                              <div className="time-slot">
+                                <div className="icon">
+                                  <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="time-option">6:00 PM</div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="modal-btn-div">
+                  <div className="employee-name-div">
+                    <h1 className="employee-name">{selectedBarberName}</h1>
+                  </div>
+                  <button className="modal-btn" onClick={handleContinue}>
+                    CONTINUE
+                  </button>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn close"
+                    id="footer-btn"
+                    data-dismiss="modal"
+                    onClick={handleCloseModal}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         {/* Overlay to prevent interactions with background content */}

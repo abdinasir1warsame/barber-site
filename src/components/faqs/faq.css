@@ -3,14 +3,14 @@
   flex-direction: row;
   justify-content: start;
   margin-top: 8rem;
-
+  height: 70vh;
   margin-left: 5rem;
 }
 .faq-container {
   display: flex;
   flex-direction: row;
   width: 60%;
-  height: 50vh;
+  height: 70vh;
   position: relative;
   text-align: start;
 }
@@ -21,13 +21,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 70vh;
 }
 
 .image-half {
   background: url('./b7166971-fb0f-44a9-91e5-75256c1d91e6.webp') center center
     no-repeat;
   background-size: cover;
-  height: 50vh;
 }
 
 .text-overlay {
@@ -45,7 +45,7 @@
 }
 
 .main-text {
-  font-size: 60px;
+  font-size: 47px;
   background: white;
   color: black;
   margin: 0;
@@ -55,7 +55,7 @@
 }
 
 .sub-text {
-  font-size: 45px;
+  font-size: 40px;
   background: white;
   color: black;
   margin: 0;
@@ -159,7 +159,7 @@ details[open] summary:after {
 }
 .faq-body {
   margin: 4em auto;
-
+  margin-top: 3em;
   background-color: #fff;
 }
 

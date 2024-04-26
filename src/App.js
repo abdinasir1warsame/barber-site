@@ -8,8 +8,9 @@ import Intro from './components/intro/intro';
 
 import PricingAndStylesPage from './components/pricingAndStyles/pricingAndStyles';
 import Products from './components/products/products';
+import Contact from './components/contact/contact';
 import Faq from './components/faqs/faq';
-import Modal from './components/bookings/modal';
+
 import Footer from './components/footer/footer';
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
       <Employee />
       <PricingAndStylesPage />
       <Products />
+      <Contact />
       <Faq />
-      <Modal />
 
       <Footer />
     </div>

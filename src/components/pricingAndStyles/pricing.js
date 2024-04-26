@@ -16,10 +16,10 @@ const PricingMenu = () => {
             'Utilization of clippers and scissors (including texturizing shears), optional shaving around the hair edges and optional pomade application.',
         },
         {
-          title: 'All Scissor Haircut & Style',
-          price: '£35-55',
+          title: 'Haircut & Beard Trim',
+          price: '$45-65',
           description:
-            'For this classic & delicate service, we utilize fine shears (including texturizing shears) to cut the hair to the desired length. Shears are proven to provide healthier hair growth.',
+            'A haircut service is performed followed by a beard trim with utilization of clippers and or shears.',
         },
         {
           title: 'Skin Fade',
@@ -45,18 +45,7 @@ const PricingMenu = () => {
           description:
             'Experience the tradition of fresh haircut service for you and your son. We recommend scheduling this combination service in advance to allow availability.',
         },
-        {
-          title: 'Haircut & Beard Trim',
-          price: '$45-65',
-          description:
-            'A haircut service is performed followed by a beard trim with utilization of clippers and or shears.',
-        },
-        {
-          title: 'Straight Razor Shave',
-          price: '$35-55',
-          description:
-            'Two hot towels, hot lather, straight razor shave, followed by aftershave balm.',
-        },
+
         // Add more items as needed
       ],
     },
@@ -106,6 +95,7 @@ const PricingMenu = () => {
           description:
             "Add styling products and techniques to your child's haircut for a polished and fashionable look.",
         },
+
         // Add more items as needed
       ],
     },
@@ -118,19 +108,22 @@ const PricingMenu = () => {
   return (
     <div className="pricing">
       <div className="wrapper">
-        <div className="menu-title">
+        {/* <div className="menu-title">
           <h2 className="menu-header">Services</h2>
-        </div>
+        </div> */}
         <div className="buttons-container">
           {menuItems.map((menu) => (
-            <div
-              key={menu.id}
-              className={`button ${
-                activeMenu === menu.id ? 'button--is-active' : ''
-              }`}
-              onClick={() => handleClick(menu.id)}
-            >
-              {menu.title}
+            <div key={menu.id} className="pricing-container">
+              <div
+                className={`${
+                  activeMenu === menu.id
+                    ? 'pricing-button-active'
+                    : 'pricing-button'
+                }`}
+                onClick={() => handleClick(menu.id)}
+              >
+                {menu.title}
+              </div>
             </div>
           ))}
         </div>
