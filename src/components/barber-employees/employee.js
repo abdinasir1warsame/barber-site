@@ -348,6 +348,7 @@ const Employee = () => {
                       activeService !== null ? 'modal-btn-active' : ''
                     }`}
                     onClick={handleCloseModal}
+                    disabled={activeService === null} // Disable button if no time slot is active
                   >
                     CHECKOUT
                   </button>
