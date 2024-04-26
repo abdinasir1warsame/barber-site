@@ -79,8 +79,24 @@ const Contact = () => {
               <p>9:00am – 6:30pm</p>
             </div>
           </div>
+          <div>
+            <div className="interactive-map">
+              <iframe
+                width="450"
+                height="400"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=450&amp;height=400&amp;hl=en&amp;q=191%20alma%20street+(Warsame's%20Barber)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              >
+                <a href="https://www.gps.ie/">gps trackers</a>
+              </iframe>
+            </div>
+          </div>
         </div>
       </div>
+      <div className="section-sep2"></div>
     </div>
   );
 };

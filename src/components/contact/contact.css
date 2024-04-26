@@ -27,7 +27,7 @@
 .contact-image-half {
   background: url('./barber-chair.avif') center center no-repeat;
   background-size: cover;
-
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
   width: 40vw;
 }
 
@@ -80,14 +80,14 @@
   justify-content: flex-start;
   width: 100vw;
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 100px;
   letter-spacing: 0.5px;
 }
 .contact-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 380px;
 }
 .contact-titles {
   font-size: 30px;
@@ -98,9 +98,9 @@
 .contact-and-hours-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-left: 5rem;
-  width: 60%;
+  justify-content: space-around;
+
+  width: 100%;
 }
 .opening-day-time {
   display: flex;
@@ -113,4 +113,9 @@
 }
 .opening-hours {
   width: 300px;
+}
+.interactive-map {
+  width: 450px;
+  height: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }

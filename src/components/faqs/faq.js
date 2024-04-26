@@ -91,7 +91,7 @@ const Faq = () => {
           </div>
         </div>
       </div>
-      <div className="section-sep"></div>
+      <div className="section-sep2"></div>
     </div>
   );
 };

@@ -279,8 +279,8 @@
   /* align-items: center; */
 }
 .arrows button {
-  width: 60%;
-  height: 60px;
+  width: 40%;
+  height: 40px;
   border-radius: 50%;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
@@ -305,7 +305,7 @@
   border: none;
   color: #fff;
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 27px;
 
   text-shadow: 0 4px 8px black;
   transition: 0.5s;

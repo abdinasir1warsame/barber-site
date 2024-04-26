@@ -1,75 +1,3 @@
-/* navbar styles */
-.main-nav {
-  width: 100%;
-  height: 8vh; /* Increased navbar height */
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-links li {
-  padding: 15px;
-  position: relative;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  transition: all 0.5s ease;
-  font-size: 1.5rem; /* Increased font size for nav links */
-  font-weight: bolder;
-  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
-}
-
-.nav-links li a:hover {
-  color: #ddd;
-  transform: scale(1.1);
-}
-
-.nav-links li:hover {
-  animation: swing 0.5s ease-in-out forwards;
-}
-
-.home {
-  color: rgba(210, 180, 9, 0.884);
-}
-
-.nav-logo {
-  height: 85px; /* Increased logo size */
-  transition: all 0.5s ease;
-  align-items: center;
-  color: WHITE;
-  font-size: 3rem;
-  font-weight: bolder;
-  letter-spacing: -2px;
-  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
-}
-
-.burger {
-  display: none;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px;
-  transition: all 0.3s ease;
-}
 /*  */
 
 .displaybox {
@@ -97,38 +25,38 @@
 
 .dis1 {
   background: url('./beard\ oil2.webp') no-repeat center center;
-  background-size: 95%;
-  background-color: white;
+  background-size: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }
 
 .dis2 {
   background: url('./product-img/beard\ oil\ 1.webp') no-repeat center center;
-  background-size: 95%;
-  background-color: white;
+  background-size: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }
 
 .dis3 {
   background: url('./product-img/clippers.webp') no-repeat center center;
-  background-size: 95%;
-  background-color: white;
+  background-size: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }
 
 .dis4 {
   background: url('./product-img/hair\ gell.webp') no-repeat center center;
-  background-size: 95%;
-  background-color: white;
+  background-size: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }
 
 .dis5 {
   background: url('./product-img/hair\ sponge.webp') no-repeat center center;
-  background-size: 95%;
-  background-color: white;
+  background-size: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }
 
 .dis6 {
   background: url('./product-img/clippers\ 1.webp') no-repeat center center;
-  background-size: 95%;
-  background-color: white;
+  background-size: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
 }
 
 .dislogo {
@@ -153,13 +81,14 @@
 
 .disdis {
   float: left;
-  font-size: 13px;
-  margin-left: 10px;
+  font-size: 15px;
+  margin-left: 70px;
   opacity: 0;
   transition: all ease 0.5s;
-  margin-top: 10px;
+
   z-index: 20;
   position: relative;
+  font-weight: bolder;
 }
 
 .distopwrap {
