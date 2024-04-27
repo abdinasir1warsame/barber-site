@@ -82,6 +82,7 @@
   font-size: 20px;
   margin-top: 100px;
   letter-spacing: 0.5px;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.252);
 }
 .contact-container {
   display: flex;
@@ -90,10 +91,10 @@
   width: 380px;
 }
 .contact-titles {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 30px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.211);
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.477);
 }
 .contact-and-hours-section {
   display: flex;

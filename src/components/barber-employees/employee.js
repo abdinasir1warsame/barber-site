@@ -246,6 +246,30 @@ const Employee = () => {
             </div>
           </div>
         </section>
+        {/* <div className="steps-container">
+          {' '}
+          <div class="steps-title ">
+            <p>
+              <span>STEP 1:</span> Choose a Barber
+            </p>
+          </div>
+          <div className="step-arrow">
+            <i class="arrow-icon fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="steps-title">
+            <p>
+              <span>STEP 2:</span> Choose a Time
+            </p>
+          </div>
+          <div className="step-arrow">
+            <i class="arrow-icon fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="steps-title">
+            <p>
+              <span>STEP 3:</span> Choose a Service
+            </p>
+          </div>
+        </div> */}
 
         <div className="section-sep2"></div>
       </div>

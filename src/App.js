@@ -10,6 +10,7 @@ import PricingAndStylesPage from './components/pricingAndStyles/pricingAndStyles
 import Products from './components/products/products';
 import Contact from './components/contact/contact';
 import Faq from './components/faqs/faq';
+import LoginSignup from './components/login-signup/login-signup';
 
 import Footer from './components/footer/footer';
 
@@ -24,6 +25,7 @@ function App() {
       <Products />
       <Contact />
       <Faq />
+      <LoginSignup />
 
       <Footer />
     </div>
