@@ -58,9 +58,7 @@ const Faq = () => {
             </div>
             <div>
               <details title="Do I need to bring anything with me to my appointment?">
-                <summary>
-                  Do I need to bring anything with me to my appointment?
-                </summary>
+                <summary>Do I need to bring anything with me ?</summary>
                 <p className="faq-content">
                   You don't need to bring anything specific. Just come as you
                   are, and we'll take care of the rest!
@@ -69,9 +67,7 @@ const Faq = () => {
             </div>
             <div>
               <details title="Can I walk in for a haircut or should I make an appointment?">
-                <summary>
-                  Can I walk in for a haircut or should I make an appointment?
-                </summary>
+                <summary>Can I walk in for a haircut ?</summary>
                 <p className="faq-content">
                   While appointments are preferred to ensure you get the time
                   slot you want, walk-ins are welcome based on availability.

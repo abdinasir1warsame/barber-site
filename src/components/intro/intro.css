@@ -2,7 +2,6 @@
   height: 24vh;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
-      black 0%,
       #fdb931 8%,
       #9f7928 30%,
       #8a6e2f 40%,
@@ -10,13 +9,11 @@
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-      black 0%,
       #ffffac 8%,
       #d1b464 25%,
       #5d4a1f 62.5%,
       #5d4a1f 100%
-    ),
-    black;
+    );
 
   display: flex;
   flex-direction: row;
@@ -39,4 +36,48 @@
 }
 #color-change {
   color: black;
+}
+@media (max-width: 800px) {
+  .intro-section {
+    height: 20vh;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        black 0%,
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        black 0%,
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      ),
+      black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative; /* or absolute, based on your design */
+    z-index: 2;
+  }
+  .intro {
+    width: 90vw;
+  }
+  .intro-text {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0 10px 10px rgb(0, 0, 0);
+  }
+  #color-change {
+    color: black;
+  }
 }

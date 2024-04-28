@@ -81,11 +81,11 @@
 
 .disdis {
   float: left;
-  font-size: 15px;
-  margin-left: 70px;
+  font-size: 18px;
+  margin-left: 130px;
   opacity: 0;
   transition: all ease 0.5s;
-
+  top: -83px;
   z-index: 20;
   position: relative;
   font-weight: bolder;
@@ -228,6 +228,42 @@
   );
   margin: 0 auto;
   margin-top: 1.5rem;
+}
+@media (max-width: 800px) {
+  .displaybox {
+    width: 95vw;
+    padding: 10px;
+    margin: 100px auto;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15),
+      1px 1px 1px rgba(0, 0, 0, 0.15); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .dis {
+    height: 350px;
+    width: 350px;
+    margin: 40px 0 60px 0;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05),
+      1px 1px 1px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+  }
+
+  .disdis {
+    float: left;
+    font-size: 15px;
+    margin-left: 120px;
+    opacity: 0;
+    transition: all ease 0.5s;
+    top: -78px;
+    z-index: 20;
+    position: relative;
+    font-weight: bolder;
+  }
 }
 /* @media screen and (min-width: 1800px) {
   .dis {
