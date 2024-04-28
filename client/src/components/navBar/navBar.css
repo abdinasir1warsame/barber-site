@@ -1,0 +1,79 @@
+/* navbar styles */
+nav {
+  width: 100%;
+  height: 10vh; /* Increased navbar height */
+  background-color: black;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 25px 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  padding: 15px;
+  position: relative;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+  font-size: 1.2rem; /* Increased font size for nav links */
+  font-weight: bolder;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+}
+
+li a:hover {
+  color: #ddd;
+  transform: scale(1.1);
+}
+li:hover {
+  animation: swing 0.5s ease-in-out forwards;
+}
+.home {
+  color: rgba(210, 180, 9, 0.884);
+}
+.register-links {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  /* align-items: center;
+  text-align: center; */
+}
+
+.nav-logo {
+  height: 85px; /* Increased logo size */
+  transition: all 0.5s ease;
+  margin-top: 25px;
+  color: WHITE;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  /* letter-spacing: -2px; */
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}

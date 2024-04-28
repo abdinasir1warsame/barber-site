@@ -1,0 +1,98 @@
+/* .login-section {
+  background-image: url('./b7166971-fb0f-44a9-91e5-75256c1d91e6.webp');
+  min-height: 105vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+} */
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: rgba(201, 186, 101, 0.99);
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(255, 217, 0, 0.213),
+    rgba(218, 165, 32, 0.132)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(255, 217, 0, 0.213),
+    rgba(218, 165, 32, 0.132)
+  );
+}
+.login-card {
+  max-height: 50vh;
+}
+.card {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #3b3012 8%,
+      /* black */ #52441c 30%,
+      /* dark grey */ #52441c 40%,
+      /* darker grey */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #3b3012 8%,
+
+      /* black */ #493c18 30%,
+      /* dark grey */ #ac924b 62.5%,
+      /* darker grey */ #695828 100% /* darker grey */
+    );
+  max-height: 94vh;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.912);
+  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
+}
+
+.bg-image {
+  background-image: url(./b7166971-fb0f-44a9-91e5-75256c1d91e6.webp);
+}
+.register-btn {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  letter-spacing: 2px;
+}
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.927);
+  text-shadow: 0 8px 16px rgba(120, 118, 118, 0.686);
+}
+
+.register-btn:active {
+  transform: translateY(-5px);
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.927);
+}
+.login-here-text {
+  color: white;
+
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.726);
+  margin-left: 3px;
+}
