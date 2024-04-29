@@ -10,7 +10,10 @@ import Layout from './pages/layout';
 import IndexPage from './pages/indexPage';
 import LoginPage from './pages/loginPage';
 import SignUpPage from './pages/signUpPage';
-axios.defaults.baseURL = 'http://localhost:4000';
+import { UserContextProvider } from './components/userContext/usercontext';
+axios.defaults.baseURL = 'http://192.168.182.1:4000';
+axios.defaults.withCredentials = true;
+
 function App() {
   const [showLoader, setShowLoader] = useState(true);
   const location = useLocation();
@@ -35,7 +38,7 @@ function App() {
       {showLoader ? (
         <Loader />
       ) : (
-        <>
+        <UserContextProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<IndexPage />}></Route>
@@ -43,8 +46,7 @@ function App() {
               <Route path="/signUp" element={<SignUpPage />}></Route>
             </Route>
           </Routes>
-          {/* Uncomment and add other components here */}
-        </>
+        </UserContextProvider>
       )}
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import './pricingAndStyles.css';
 import carrousel1 from '../../assets/carousel-images/person getting cut 3.webp';
 import carrousel2 from '../../assets/carousel-images/person getting cut 4.webp';
@@ -14,26 +15,35 @@ function CarouselComponent() {
     const thumbnailDOm = document.querySelector('.carousel .thumbnail');
 
     const showSlider = (type) => {
-      const itemSlider = document.querySelectorAll('.carousel .list .item');
-      const itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
+      const itemSlider = document.querySelector('.carousel .list .item');
+      const itemThumbnail = document.querySelector(
+        '.carousel .thumbnail .item'
+      );
 
       if (type === 'next') {
-        listItemDom.appendChild(itemSlider[0]);
-        thumbnailDOm.appendChild(itemThumbnail[0]);
+        listItemDom.appendChild(itemSlider.cloneNode(true));
+        thumbnailDOm.appendChild(itemThumbnail.cloneNode(true));
         carouselDom.classList.add('next');
       } else {
-        const positionLastItem = itemSlider.length - 1;
-        listItemDom.prepend(itemSlider[positionLastItem]);
-        thumbnailDOm.prepend(itemThumbnail[positionLastItem]);
+        const lastItemSlider = itemSlider[itemSlider.length - 1];
+        const lastItemThumbnail = itemThumbnail[itemThumbnail.length - 1];
+        listItemDom.insertBefore(
+          lastItemSlider.cloneNode(true),
+          listItemDom.firstChild
+        );
+        thumbnailDOm.insertBefore(
+          lastItemThumbnail.cloneNode(true),
+          thumbnailDOm.firstChild
+        );
         carouselDom.classList.add('prev');
       }
-      
+
       clearTimeout(runTimeOut);
       runTimeOut = setTimeout(() => {
         carouselDom.classList.remove('next');
         carouselDom.classList.remove('prev');
       }, timeRunning);
-      
+
       clearTimeout(runAutoRun);
       runAutoRun = setTimeout(() => {
         nextDom.click();
@@ -50,7 +60,7 @@ function CarouselComponent() {
     nextDom.onclick = () => {
       showSlider('next');
     };
-    
+
     prevDom.onclick = () => {
       showSlider('prev');
     };
@@ -58,18 +68,22 @@ function CarouselComponent() {
 
   // Mocked data for carousel items
   const carouselItems = [
-    { image: carrousel1, author: "Blended to perfection", topic: "Head Shave" },
-    { image: carrousel2, author: "Blended to perfection", topic: "Straight Razor" },
-    { image: carrousel3, author: "Blended to perfection", topic: "Beard trim" },
-    { image: carrousel4, author: "Blended to perfection", topic: "Skin fade" }
+    { image: carrousel1, author: 'Blended to perfection', topic: 'Head Shave' },
+    {
+      image: carrousel2,
+      author: 'Blended to perfection',
+      topic: 'Straight Razor',
+    },
+    { image: carrousel3, author: 'Blended to perfection', topic: 'Beard trim' },
+    { image: carrousel4, author: 'Blended to perfection', topic: 'Skin fade' },
   ];
 
   // Mocked data for thumbnail items
   const thumbnailItems = [
-    { image: carrousel2, title: "Name Slider", description: "Description" },
-    { image: carrousel3, title: "Name Slider", description: "Description" },
-    { image: carrousel4, title: "Name Slider", description: "Description" },
-    { image: carrousel1, title: "Name Slider", description: "Description" }
+    { image: carrousel2, title: 'Name Slider', description: 'Description' },
+    { image: carrousel3, title: 'Name Slider', description: 'Description' },
+    { image: carrousel4, title: 'Name Slider', description: 'Description' },
+    { image: carrousel1, title: 'Name Slider', description: 'Description' },
   ];
 
   return (
@@ -111,4 +125,3 @@ function CarouselComponent() {
 }
 
 export default CarouselComponent;
-

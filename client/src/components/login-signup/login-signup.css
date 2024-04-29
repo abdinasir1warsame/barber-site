@@ -58,6 +58,8 @@
 
 .bg-image {
   background-image: url(./b7166971-fb0f-44a9-91e5-75256c1d91e6.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .register-btn {
   background: radial-gradient(

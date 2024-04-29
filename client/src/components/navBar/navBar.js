@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 import './navBar.css';
+import { UserContext } from '../userContext/usercontext';
 const NavBar = () => {
+  const { user } = useContext(UserContext);
+  console.log(user);
   return (
     <nav>
       <div className="nav-menu">
@@ -24,14 +29,23 @@ const NavBar = () => {
             <a href="/home">About Us</a>
           </li>
         </ul>
-        <div className="register-links">
-          <li>
-            <a href="/login">Login</a>
-          </li>
-          <li>
-            <a href="/signUp">Sign Up</a>
-          </li>
-        </div>
+        <ul className="register-links">
+          <Link to={'/login'}>
+            <li>
+              <a href="">Login</a>
+            </li>
+          </Link>
+          <Link to={'/signUp'}>
+            <li>
+              <a href="">Sign Up</a>
+            </li>
+          </Link>
+          {!!user && (
+            <li className="text-white">
+              <a href="/signUp">{user.name}</a>
+            </li>
+          )}
+        </ul>
 
         <div className="burger">
           <div className="line1"></div>

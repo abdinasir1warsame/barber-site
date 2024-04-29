@@ -14,21 +14,7 @@
 .loader-container {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(48, 35, 1); /* Starting black color */
-  animation: colorTransition 4s linear forwards; /* 6-second linear transition, set to repeat infinitely */
-}
-
-@keyframes colorTransition {
-  /* 0% {
-    background-color: gold; 
-  } */
-  0% {
-    background-color: rgb(58, 42, 3); /* Intermediate color */
-  }
-
-  100% {
-    background-color: #000; /* Ending black color */
-  }
+  background-color: black;
 }
 
 .flex-container {

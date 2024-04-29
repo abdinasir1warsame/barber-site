@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../userContext/usercontext';
+import { Link } from 'react-router-dom';
+
 import './employee.css';
 import barberImage1 from '../../assets/employee-card/barber1.webp';
 import barberImage2 from '../../assets/employee-card/barber2.webp';
@@ -6,6 +9,7 @@ import barberImage3 from '../../assets/employee-card/barber3.webp';
 import cardLogo from '../../assets/employee-card/MAIN-CROP.png';
 
 const Employee = () => {
+  const { user } = useContext(UserContext);
   const [showModal, setShowModal] = useState(false);
   const [showServiceSelection, setShowServiceSelection] = useState(false);
   const [activeTimeSlot, setActiveTimeSlot] = useState(null);
@@ -19,6 +23,7 @@ const Employee = () => {
     setShowModal(true);
     document.body.style.overflow = 'hidden';
   };
+
   const handleTimeSlotClick = (timeSlotIndex) => {
     if (activeTimeSlot === timeSlotIndex) {
       setActiveTimeSlot(null); // Remove active class if clicked again
@@ -62,6 +67,7 @@ const Employee = () => {
     { name: 'Haircut & Styles', price: '£ 50.00' },
     { name: 'Haircut & Styles', price: '£ 55.00' },
   ];
+
   return (
     <div>
       <div className=" employee-container">
@@ -78,7 +84,13 @@ const Employee = () => {
 
         <section className=" employee-section">
           <div className="barber-card">
-            <div className="book-now">
+            <Link
+              to={user ? '#' : '/login'}
+              className="book-now"
+              onClick={
+                user ? () => handleOpenModal(barberImage3, 'Abdi Somali') : null
+              }
+            >
               <div>
                 <i className="fas fa-calendar-check booking-icon"></i>
               </div>
@@ -93,7 +105,7 @@ const Employee = () => {
                   APPOINTMENT
                 </p>
               </div>
-            </div>
+            </Link>
             <div className="overflow-g">
               <div className="poster">
                 <img src={barberImage3} alt="" />
@@ -134,7 +146,15 @@ const Employee = () => {
             </div>
           </div>
           <div className="barber-card">
-            <div className="book-now">
+            <Link
+              to={user ? '#' : '/login'}
+              className="book-now"
+              onClick={
+                user
+                  ? () => handleOpenModal(barberImage2, 'Latif Warsame')
+                  : null
+              }
+            >
               <div>
                 <i className="fas fa-calendar-check booking-icon"></i>
               </div>
@@ -149,7 +169,7 @@ const Employee = () => {
                   APPOINTMENT
                 </p>
               </div>
-            </div>
+            </Link>
             <div className="overflow-g">
               <div className="poster">
                 <img src={barberImage2} alt="" />
@@ -190,7 +210,15 @@ const Employee = () => {
             </div>
           </div>
           <div className="barber-card">
-            <div className="book-now">
+            <Link
+              to={user ? '#' : '/login'}
+              className="book-now"
+              onClick={
+                user
+                  ? () => handleOpenModal(barberImage1, 'Nasir Warsame')
+                  : null
+              }
+            >
               <div>
                 <i className="fas fa-calendar-check booking-icon"></i>
               </div>
@@ -205,7 +233,7 @@ const Employee = () => {
                   APPOINTMENT
                 </p>
               </div>
-            </div>
+            </Link>
             <div className="overflow-g">
               <div className="poster">
                 <img src={barberImage1} alt="" />

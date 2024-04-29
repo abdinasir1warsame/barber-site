@@ -6,9 +6,14 @@ const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  function registerUser(ev) {
+  async function registerUser(ev) {
     ev.preventDefault();
-    axios.post('/signUp', { name, email, password });
+    try {
+      await axios.post('/signUp', { name, email, password });
+      alert('Registration successful. now you can log in');
+    } catch (e) {
+      alert('Registration failed please try again later');
+    }
   }
   return (
     <div className="">
