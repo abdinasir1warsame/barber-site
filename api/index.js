@@ -12,6 +12,8 @@ const app = express();
 const bcryptSalt = bcrypt.genSaltSync(12);
 const jwtSecret = 'your_jwt_secret_here'; // Replace with a strong random secret
 app.use(express.json());
+app.use(express.static('public'));
+
 app.use(cookieParser());
 app.use(
   cors({
