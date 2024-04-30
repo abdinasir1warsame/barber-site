@@ -85,10 +85,9 @@ app.get('/profile', (req, res) => {
     // If token exists, verify it
     jwt.verify(token, jwtSecret, {}, (err, userData) => {
       if (err) {
-        // If there's an error, send an error response
+        console.error(err); // Log any errors
         return res.status(401).json({ message: 'Unauthorized' });
       } else {
-        // If verification is successful, send a random message
         const messages = ['Hello!', 'Welcome!', 'How are you today?'];
         const randomMessage =
           messages[Math.floor(Math.random() * messages.length)];
@@ -96,8 +95,8 @@ app.get('/profile', (req, res) => {
       }
     });
   } else {
-    // If no token is found, send null or an appropriate response
-    res.json(null);
+    // If no token is found, send an appropriate response (e.g., unauthorized)
+    res.status(401).json({ message: 'Unauthorized' });
   }
 });
 
