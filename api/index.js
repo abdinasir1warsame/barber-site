@@ -39,7 +39,7 @@ app.post('/signUp', async (req, res) => {
     res.status(422).json(e);
   }
 });
-app.options('/login', (req, res) => {
+app.options('/profile', (req, res) => {
   res.setHeader(
     'Access-Control-Allow-Origin',
     'https://barber-site-seven.vercel.app'
@@ -65,6 +65,8 @@ app.post('/login', async (req, res) => {
             .cookie('token', token, {
               httpOnly: true,
               maxAge: 7 * 24 * 60 * 60 * 1000,
+              sameSite: 'None', // Set sameSite to "None"
+              secure: true,
             })
             .json(userDoc);
         }
