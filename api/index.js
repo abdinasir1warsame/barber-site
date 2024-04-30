@@ -12,20 +12,15 @@ const app = express();
 const bcryptSalt = bcrypt.genSaltSync(12);
 const jwtSecret = 'your_jwt_secret_here'; // Replace with a strong random secret
 app.use(express.json());
-app.get('/favicon.ico', (req, res) => res.status(204));
-
 app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: 'https://barber-site-seven.vercel.app',
-    methods: ['POST', 'GET'],
+    origin: 'http://192.168.182.1:3000',
   })
 );
 
-mongoose.connect(
-  'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
-);
+mongoose.connect(process.env.MONGO_URL);
 
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
@@ -104,8 +99,5 @@ app.post('/bookings', async (req, res) => {
     res.status(401).json({ error: 'Unauthorized' });
   }
 });
-app.get('/', (req, res) => {
-  res.send('Server connection successful!');
-});
 
-module.exports = app;
+app.listen(4000);
