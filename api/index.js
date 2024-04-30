@@ -79,17 +79,28 @@ app.post('/login', async (req, res) => {
 
 // Protected route using JWT
 app.get('/profile', (req, res) => {
+  // Check for the presence of token in cookies
   const { token } = req.cookies;
   if (token) {
-    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
-      if (err) throw err;
-      const { name, email, _id } = await User.findById(userData.id);
-      res.json({ name, email, _id });
+    // If token exists, verify it
+    jwt.verify(token, jwtSecret, {}, (err, userData) => {
+      if (err) {
+        // If there's an error, send an error response
+        return res.status(401).json({ message: 'Unauthorized' });
+      } else {
+        // If verification is successful, send a random message
+        const messages = ['Hello!', 'Welcome!', 'How are you today?'];
+        const randomMessage =
+          messages[Math.floor(Math.random() * messages.length)];
+        res.json({ message: randomMessage });
+      }
     });
   } else {
+    // If no token is found, send null or an appropriate response
     res.json(null);
   }
 });
+
 app.post('/bookings', async (req, res) => {
   const { date, time, service, barberName } = req.body;
   try {
