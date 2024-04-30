@@ -108,4 +108,4 @@ app.get('/', (req, res) => {
   res.send('Server connection successful!');
 });
 
-app.listen(process.env.PORT);
+module.exports = app;
