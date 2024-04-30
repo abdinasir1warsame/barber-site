@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../userContext/usercontext';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import './employee.css';
 import barberImage1 from '../../assets/employee-card/barber1.webp';
@@ -16,6 +19,42 @@ const Employee = () => {
   const [activeService, setActiveService] = useState(null);
   const [selectedBarberImage, setSelectedBarberImage] = useState(null);
   const [selectedBarberName, setSelectedBarberName] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [dateError, setDateError] = useState(false);
+  const [timeError, setTimeError] = useState(false);
+
+  async function completeBooking() {
+    const service = activeService !== null ? services[activeService] : null;
+    const date = selectedDate ? selectedDate.toISOString().split('T')[0] : '';
+    const time = activeTimeSlot !== null ? timeSlots[activeTimeSlot] : '';
+    const barberName = selectedBarberName;
+
+    const response = await axios.post('/bookings', {
+      time,
+      date,
+      service,
+      barberName,
+    });
+    const bookingId = response.data._id;
+    console.log(bookingId);
+  }
+
+  const MyDatePicker = () => {
+    const handleDateChange = (date) => {
+      setSelectedDate(date);
+    };
+    const currentDate = new Date();
+    return (
+      <DatePicker
+        selected={selectedDate}
+        minDate={currentDate}
+        onChange={handleDateChange}
+        className="datepicker" // Add custom class name
+        placeholderText="Pick Your Date 📅" // Set placeholder text
+        dateFormat="MMMM d, yyyy" // Set date format
+      />
+    );
+  };
 
   const handleOpenModal = (image, name) => {
     setSelectedBarberImage(image);
@@ -23,7 +62,6 @@ const Employee = () => {
     setShowModal(true);
     document.body.style.overflow = 'hidden';
   };
-
   const handleTimeSlotClick = (timeSlotIndex) => {
     if (activeTimeSlot === timeSlotIndex) {
       setActiveTimeSlot(null); // Remove active class if clicked again
@@ -39,16 +77,57 @@ const Employee = () => {
     }
   };
   const handleContinue = () => {
-    setShowServiceSelection(true); // Show the service selection interface
+    setShowServiceSelection(true);
+    if (!selectedDate) {
+      setDateError(true);
+      setTimeError(false); // Reset time error
+    } else if (activeTimeSlot === null) {
+      setTimeError(true);
+      setDateError(false); // Reset date error
+    } else {
+      setShowServiceSelection(true); // Show the service selection interface
+      setDateError(false); // Reset date error
+      setTimeError(false); // Reset time error
+    } // Show the service selection interface
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
-    setShowServiceSelection(false);
-    setActiveService(null);
-    setActiveTimeSlot(null);
-    document.body.style.overflow = 'auto';
+    if (showServiceSelection) {
+      // If the service selection modal is open
+      // Gather all the data
+      const selectedService =
+        activeService !== null ? services[activeService] : null;
+      const selectedDateValue = selectedDate
+        ? selectedDate.toISOString().split('T')[0]
+        : '';
+      const selectedTimeSlot =
+        activeTimeSlot !== null ? timeSlots[activeTimeSlot] : '';
+
+      // Log the booking data
+      console.log('Booking:', {
+        service: selectedService,
+        date: selectedDateValue,
+        timeSlot: selectedTimeSlot,
+      });
+
+      // Reset states and close modal
+      setShowModal(false);
+      setShowServiceSelection(false);
+      setActiveService(null);
+      setActiveTimeSlot(null);
+      setSelectedDate(null);
+
+      document.body.style.overflow = 'auto';
+    } else {
+      // If the time slot selection modal is open
+      // Close the modal without gathering data
+      setShowModal(false);
+      setActiveTimeSlot(null);
+      setSelectedDate(null);
+      document.body.style.overflow = 'auto';
+    }
   };
+
   const timeSlots = [
     '10:00 AM',
     '11:00 AM',
@@ -95,7 +174,7 @@ const Employee = () => {
                 <i className="fas fa-calendar-check booking-icon"></i>
               </div>
               <div>
-                <p>click here to</p>
+                <p className="book-now-sub">click here to</p>
                 <p
                   id="barberBooking1"
                   className="booking-now-text"
@@ -159,7 +238,7 @@ const Employee = () => {
                 <i className="fas fa-calendar-check booking-icon"></i>
               </div>
               <div>
-                <p>click here to</p>
+                <p className="book-now-sub">click here to</p>
                 <p
                   id="barberBooking2"
                   className="booking-now-text"
@@ -223,7 +302,7 @@ const Employee = () => {
                 <i className="fas fa-calendar-check booking-icon"></i>
               </div>
               <div>
-                <p>click here to</p>
+                <p className="book-now-sub">click here to</p>
                 <p
                   id="barberBooking3"
                   className="booking-now-text"
@@ -316,6 +395,8 @@ const Employee = () => {
           <div className="modal-dialog modal-xl" role="document">
             {showServiceSelection ? ( // Check if service selection interface should be shown
               <div className="modal-content">
+                {dateError && <p>Please choose a date</p>}
+                {timeError && <p>Please choose a time</p>}
                 <div className="modal-header">
                   <h1 className="modal-title">CHOOSE A SERVICE</h1>
 
@@ -399,8 +480,10 @@ const Employee = () => {
                     className={`modal-btn ${
                       activeService !== null ? 'modal-btn-active' : ''
                     }`}
-                    onClick={handleCloseModal}
-                    disabled={activeService === null} // Disable button if no time slot is active
+                    onClick={() => {
+                      handleCloseModal();
+                      completeBooking();
+                    }}
                   >
                     CHECKOUT
                   </button>
@@ -442,7 +525,7 @@ const Employee = () => {
                     <div className="calender-main row justify-content-center mx-0">
                       <div className="date-card border-0">
                         <form className="booking-form" autoComplete="off">
-                          <div className="card-header bg-dark">
+                          {/* <div className="card-header bg-dark">
                             <div className="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
                               <input
                                 type="text"
@@ -453,7 +536,12 @@ const Employee = () => {
                                 readOnly
                               />
                             </div>
+                          </div> */}
+
+                          <div className="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
+                            <MyDatePicker />
                           </div>
+
                           <div className="slot-container">
                             <div className="right-slots">
                               {timeSlots.slice(0, 3).map((timeSlot, index) => (
@@ -510,6 +598,26 @@ const Employee = () => {
                               ))}
                             </div>
                           </div>
+                          <input
+                            type="hidden"
+                            id="pickedDate"
+                            name="pickedDate"
+                            value={
+                              selectedDate
+                                ? selectedDate.toISOString().split('T')[0]
+                                : ''
+                            }
+                          />
+                          <input
+                            type="hidden"
+                            id="timeSlotValue"
+                            name="timeSlotValue"
+                            value={
+                              activeTimeSlot !== null
+                                ? timeSlots[activeTimeSlot]
+                                : ''
+                            }
+                          />
                         </form>
                       </div>
                     </div>
@@ -521,10 +629,12 @@ const Employee = () => {
                   </div>
                   <button
                     className={`modal-btn ${
-                      activeTimeSlot !== null ? 'modal-btn-active' : ''
+                      activeTimeSlot !== null && selectedDate !== null
+                        ? 'modal-btn-active'
+                        : ''
                     }`}
                     onClick={handleContinue}
-                    disabled={activeTimeSlot === null} // Disable button if no time slot is active
+                    disabled={activeTimeSlot === null || selectedDate === null} // Disable button if no time slot or date is selected
                   >
                     CONTINUE
                   </button>

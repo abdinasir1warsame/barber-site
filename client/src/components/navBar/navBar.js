@@ -9,16 +9,20 @@ const NavBar = () => {
   return (
     <nav>
       <div className="nav-menu">
-        <div className="logo">
-          {/* <a href="#"><img src="./images/perfect logo.png" alt="Logo" /></a> */}
-          <h3 className="nav-logo">WARSAME'S.</h3>
-        </div>
+        <Link to={'/'} className="react-link">
+          <div className="logo">
+            {/* <a href="#"><img src="./images/perfect logo.png" alt="Logo" /></a> */}
+
+            <h3 className="nav-logo">WARSAME'S.</h3>
+          </div>
+        </Link>
         <ul className="nav-left">
           <li>
             <a className="home" href="/">
               Home
             </a>
           </li>
+
           <li>
             <a href="/home">Bookings</a>
           </li>
@@ -31,18 +35,27 @@ const NavBar = () => {
         </ul>
         <ul className="register-links">
           <Link to={'/login'}>
-            <li>
-              <a href="">Login</a>
-            </li>
+            {!user && (
+              <li>
+                <a href="">Login</a>
+              </li>
+            )}
           </Link>
           <Link to={'/signUp'}>
-            <li>
-              <a href="">Sign Up</a>
-            </li>
+            {!user && (
+              <li>
+                <a href="">Sign Up</a>
+              </li>
+            )}
           </Link>
           {!!user && (
             <li className="text-white">
-              <a href="/signUp">{user.name}</a>
+              <a href="">{user.name}</a>
+            </li>
+          )}
+          {!!user && (
+            <li className="text-white">
+              <a href="/signUp">Log Out</a>
             </li>
           )}
         </ul>

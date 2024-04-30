@@ -5,6 +5,7 @@ const User = require('./models/user');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Booking = require('./models/booking');
 require('dotenv').config();
 const app = express();
 
@@ -74,6 +75,28 @@ app.get('/profile', (req, res) => {
     });
   } else {
     res.json(null);
+  }
+});
+app.post('/bookings', async (req, res) => {
+  const { date, time, service, barberName } = req.body;
+  try {
+    const decodedToken = jwt.verify(req.cookies.token, jwtSecret);
+
+    const userEmail = decodedToken.email;
+
+    // Look up the user by email to get the name
+    const user = await User.findOne({ email: userEmail });
+    const userName = user ? user.name : null;
+
+    Booking.create({ date, time, service, barberName, userName, userEmail })
+      .then((doc) => {
+        res.json(doc);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  } catch (error) {
+    res.status(401).json({ error: 'Unauthorized' });
   }
 });
 

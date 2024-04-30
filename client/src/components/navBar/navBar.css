@@ -10,7 +10,9 @@ nav {
 
   padding: 25px 0;
 }
-
+.react-link {
+  text-decoration: none;
+}
 .nav-menu {
   display: flex;
   justify-content: space-between;
