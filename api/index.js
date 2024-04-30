@@ -22,7 +22,9 @@ app.use(
   })
 );
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(
+  'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
+);
 
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
