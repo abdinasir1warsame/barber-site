@@ -103,6 +103,14 @@ app.post('/bookings', async (req, res) => {
     res.status(401).json({ error: 'Unauthorized' });
   }
 });
+// Define all your route handlers and middleware here
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
 app.get('/', (req, res) => {
   res.send('Server connection successful!');
 });
