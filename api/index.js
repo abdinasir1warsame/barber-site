@@ -101,5 +101,8 @@ app.post('/bookings', async (req, res) => {
     res.status(401).json({ error: 'Unauthorized' });
   }
 });
+app.get('/', (req, res) => {
+  res.send('Server connection successful!');
+});
 
 app.listen(4000);
