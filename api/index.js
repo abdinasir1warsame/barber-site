@@ -17,7 +17,7 @@ app.use(
   cors({
     credentials: true,
 
-    origin: 'https://barber-site-seven.vercel.app/',
+    origin: 'https://barber-site-seven.vercel.app',
     methods: ['POST', 'GET'],
   })
 );
