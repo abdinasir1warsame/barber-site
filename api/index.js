@@ -21,7 +21,9 @@ app.use(
   })
 );
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(
+  'mongodb+srv://awarsame1993:<password>@cluster0.f9mvien.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+);
 
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
@@ -101,4 +103,4 @@ app.post('/bookings', async (req, res) => {
   }
 });
 
-app.listen(4000);
+app.listen(process.env.PORT);
