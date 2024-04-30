@@ -22,7 +22,7 @@ app.use(
 );
 
 mongoose.connect(
-  'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+  'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
 );
 
 app.post('/signUp', async (req, res) => {
