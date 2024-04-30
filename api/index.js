@@ -39,7 +39,16 @@ app.post('/signUp', async (req, res) => {
     res.status(422).json(e);
   }
 });
-
+app.options('/login', (req, res) => {
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://barber-site-seven.vercel.app'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.sendStatus(204); // No content
+});
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const userDoc = await User.findOne({ email });
