@@ -12,7 +12,7 @@ const app = express();
 const bcryptSalt = bcrypt.genSaltSync(12);
 const jwtSecret = 'your_jwt_secret_here'; // Replace with a strong random secret
 app.use(express.json());
-app.use(express.static('public'));
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use(cookieParser());
 app.use(
@@ -103,6 +103,9 @@ app.post('/bookings', async (req, res) => {
   } catch (error) {
     res.status(401).json({ error: 'Unauthorized' });
   }
+});
+app.get('/', (req, res) => {
+  res.send('Server connection successful!');
 });
 
 app.listen(process.env.PORT);
