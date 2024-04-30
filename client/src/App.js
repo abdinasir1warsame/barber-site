@@ -11,7 +11,7 @@ import IndexPage from './pages/indexPage';
 import LoginPage from './pages/loginPage';
 import SignUpPage from './pages/signUpPage';
 import { UserContextProvider } from './components/userContext/usercontext';
-axios.defaults.baseURL = 'https://barber-site-api.vercel.app/';
+axios.defaults.baseURL = 'https://barber-site-api.vercel.app';
 axios.defaults.withCredentials = true;
 
 function App() {
