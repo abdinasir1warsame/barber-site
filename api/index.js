@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: 'http://deploy-mern-1whq.vercel.app',
+    origin: 'https://barber-site-seven.vercel.app/',
     methods: ['POST', 'GET'],
   })
 );
