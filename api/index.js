@@ -16,7 +16,9 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: 'http://192.168.182.1:3000',
+
+    origin: 'https://barber-site-seven.vercel.app/',
+    methods: ['POST', 'GET'],
   })
 );
 

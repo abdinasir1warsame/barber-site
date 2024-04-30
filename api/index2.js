@@ -68,4 +68,5 @@ app.get('/profile', (req, res) => {
   const { token } = req.cookies;
   res.json({ token });
 });
-app.listen(4000);
+app.listen(process.env.PORT);
+module.exports = app;
