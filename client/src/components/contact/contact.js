@@ -79,7 +79,7 @@ const Contact = () => {
               <p>9:00am – 6:30pm</p>
             </div>
           </div>
-          <div>
+          <div className="interactive-map-container">
             <div className="interactive-map">
               <iframe
                 width="450"
