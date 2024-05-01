@@ -112,6 +112,7 @@ const Products = () => {
           </div>
         </div>
       </div>
+
       <div className="section-sep2"></div>
     </div>
   );

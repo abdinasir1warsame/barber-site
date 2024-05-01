@@ -87,6 +87,7 @@ function CarouselComponent() {
   ];
 
   return (
+    <div className='styles-container'>
     <div className="carousel">
       <div className="list">
         {/* Mapping carousel items */}
@@ -120,6 +121,7 @@ function CarouselComponent() {
         <button id="next">&gt;</button>
       </div>
       <div className="time"></div>
+    </div>
     </div>
   );
 }

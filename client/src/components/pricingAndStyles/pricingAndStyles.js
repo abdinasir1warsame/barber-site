@@ -7,7 +7,7 @@ const PricingAndStylesPage = () => {
   return (
     <div>
       <div className="col-sm-12">
-        <div className="title-box2 ">
+        <div className="title-box5 ">
           <h3 className="title-a"> Signature Cuts and Prices</h3>
           <p className="subtitle-a">
             Browse Through Our Diverse Collection of Haircuts, From Classic to

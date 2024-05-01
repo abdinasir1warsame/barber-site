@@ -89,12 +89,6 @@ const PricingMenu = () => {
           description:
             'Gentle straight-edge razor shave around the scalp for a clean and refreshed look, suitable for children.',
         },
-        {
-          title: 'Styling for Kids',
-          price: '£5-15',
-          description:
-            "Add styling products and techniques to your child's haircut for a polished and fashionable look.",
-        },
 
         // Add more items as needed
       ],

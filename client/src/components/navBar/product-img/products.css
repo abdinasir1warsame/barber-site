@@ -1,12 +1,84 @@
+/* navbar styles */
+.main-nav {
+  width: 100%;
+  height: 8vh; /* Increased navbar height */
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 15px;
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+  font-size: 1.5rem; /* Increased font size for nav links */
+  font-weight: bolder;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+  transform: scale(1.1);
+}
+
+.nav-links li:hover {
+  animation: swing 0.5s ease-in-out forwards;
+}
+
+.home {
+  color: rgba(210, 180, 9, 0.884);
+}
+
+.nav-logo {
+  height: 85px; /* Increased logo size */
+  transition: all 0.5s ease;
+  align-items: center;
+  color: WHITE;
+  font-size: 3rem;
+  font-weight: bolder;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
 /*  */
 
 .displaybox {
-  width: 95vw;
-  padding: 10px;
+  width: 85vw;
+  padding: 30px;
   margin: 100px auto;
   background-color: rgba(255, 255, 255, 0.8);
-  /* box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15),
-    1px 1px 1px rgba(0, 0, 0, 0.15); */
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15),
+    1px 1px 1px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -14,8 +86,8 @@
 }
 
 .dis {
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   margin: 40px 0 60px 0;
   box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05),
     1px 1px 1px rgba(0, 0, 0, 0.05);
@@ -24,39 +96,39 @@
 }
 
 .dis1 {
-  background: url('./beard\ oil2.webp') no-repeat center center;
-  background-size: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background: url('./images/beard\ oil2.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
 }
 
 .dis2 {
-  background: url('./product-img/beard\ oil\ 1.webp') no-repeat center center;
-  background-size: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background: url('./images/beard\ oil\ 1.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
 }
 
 .dis3 {
-  background: url('./product-img/clippers.webp') no-repeat center center;
-  background-size: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background: url('./images/clippers.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
 }
 
 .dis4 {
-  background: url('./product-img/hair\ gell.webp') no-repeat center center;
-  background-size: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background: url('./images/hair\ gell.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
 }
 
 .dis5 {
-  background: url('./product-img/hair\ sponge.webp') no-repeat center center;
-  background-size: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background: url('./images/hair\ sponge.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
 }
 
 .dis6 {
-  background: url('./product-img/clippers\ 1.webp') no-repeat center center;
-  background-size: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.927);
+  background: url('./images/clippers\ 2.webp') no-repeat center center;
+  background-size: 95%;
+  background-color: white;
 }
 
 .dislogo {
@@ -74,21 +146,20 @@
 }
 
 .dislogo1 {
-  background: url('./product-img/perfect\ logo.png') no-repeat center center;
+  background: url('') no-repeat center center;
   background-size: 100%;
   /* background-color: black; */
 }
 
 .disdis {
   float: left;
-  font-size: 18px;
-  margin-left: 130px;
+  font-size: 13px;
+  margin-left: 10px;
   opacity: 0;
   transition: all ease 0.5s;
-  top: -83px;
+  margin-top: 10px;
   z-index: 20;
   position: relative;
-  font-weight: bolder;
 }
 
 .distopwrap {
@@ -194,89 +265,10 @@
     /* Inner shadow */ 0 0 1em rgba(0, 0, 0, 0.5); /* Outer shadow */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.847);
 }
-.title-box3 {
-  margin-top: 9rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  color: #1e1e1e;
-  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  font-weight: bolder;
-}
-
-.title-a {
-  text-decoration: none;
-  font-size: 3rem;
-  font-weight: bold;
-  /* text-transform: uppercase; */
-}
-
-.subtitle-a {
-  text-decoration: none;
-  color: #4e4e4e;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-.line-mf {
-  width: 65vw;
-  height: 6px;
-  background: linear-gradient(
-    to right,
-    rgba(156, 134, 8, 0),
-    rgba(156, 134, 8, 0.884),
-    rgba(156, 134, 8, 0)
-  );
-  margin: 0 auto;
-  margin-top: 1.5rem;
-}
-@media (max-width: 800px) {
-  .displaybox {
-    width: 95vw;
-    padding: 10px;
-    margin: 100px auto;
-    margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15),
-      1px 1px 1px rgba(0, 0, 0, 0.15); */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+@media screen and (min-width: 1000px) {
   .dis {
-    height: 350px;
-    width: 350px;
-    margin: 40px 0 60px 0;
-    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05),
-      1px 1px 1px rgba(0, 0, 0, 0.05);
-    position: relative;
-    z-index: 100;
-  }
-
-  .disdis {
-    float: left;
-    font-size: 15px;
-    margin-left: 120px;
-    opacity: 0;
-    transition: all ease 0.5s;
-    top: -78px;
-    z-index: 20;
-    position: relative;
-    font-weight: bolder;
-  }
-  .title-box3 {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    color: #1e1e1e;
-    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    font-weight: bolder;
-  }
-}
-/* @media screen and (min-width: 1800px) {
-  .dis {
-    height: 500px;
-    width: 500px;
+    height: 550px;
+    width: 550px;
   }
   .dislogo {
     height: 180px;
@@ -303,7 +295,4 @@
     height: 300px;
     width: 300px;
   }
-} */
-p {
-  margin-bottom: 0;
 }
