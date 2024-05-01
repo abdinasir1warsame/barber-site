@@ -1,6 +1,36 @@
-/* navbar styles */
-nav {
-  width: 100%;
+ul {
+  text-decoration: none;
+}
+
+li {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+  font-size: 1.3rem; /* Increased font size for nav links */
+  font-weight: bolder;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+  list-style-type: none;
+}
+
+.navbar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  text-shadow: 0 8px 16px rgba(210, 180, 9, 0.884);
+}
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+}
+
+section.navigation-bar {
+  /*   border: 3px dashed; */
+  width: 100vw;
   height: 10vh; /* Increased navbar height */
   background-color: black;
 
@@ -10,72 +40,509 @@ nav {
 
   padding: 25px 0;
 }
-.react-link {
+
+.navigation-bar .first-half {
+  /*   border: 2px dashed blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-bar .first-half li:hover {
+  color: #ddd;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.navigation-bar .navigation-list {
+  /*   border: 3px solid pink; */
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding-left: 0;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  align-items: center;
+}
+
+.navigation-list li {
+  text-align: center;
+  margin-right: 20px;
+}
+
+.navigation-list a {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+/* .navigation-bar .navigation-list > li {
+  display: inline-block;
+  color: white;
+  background: red;
+} */
+
+.navigation-bar .second-half {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  place-items: center;
+}
+
+.navigation-bar .second-half a:nth-child(2) {
+  text-decoration: none;
+  width: 100%;
+}
+.navigation-bar .second-half a:nth-child(1) {
   text-decoration: none;
 }
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
+.navigation-bar .second-half a:nth-child(3) {
+  text-decoration: none;
+  width: 100%;
+}
+.logOutBtn {
+  min-width: 150px;
+}
+.login-sign-btn {
+  color: white;
+
+  font-size: 1.7rem; /* Increased font size for nav links */
+  font-weight: bolder;
+  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+
+  font-family: 'Montserrat', sans-serif;
+
+  text-align: center;
+  padding: 15px 0px;
+  color: white;
+  margin-left: 30px;
 }
 
-ul {
-  list-style: none;
-  display: flex;
+.navigation-boxes .car-type {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  background-size: 100%;
+  background-position: center;
+  border-radius: 10px;
 }
 
-li {
-  padding: 15px;
+.second-li-container {
+  position: relative;
+  z-index: 20;
+}
+
+.navigation-bar .navigation-boxes .car-type img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.navigation-bar .car-type span {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  left: 10px;
+  letter-spacing: 3px;
+}
+
+.navigation-bar .first-li-container {
+  /*   border: 10px dashed; */
+  transition: all 400ms ease-in-out;
+}
+
+.navigation-bar .product-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 60%;
+  /*   border: 3px dotted purple; */
+  padding: 30px 0px 20px 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  transition: all 100ms ease-in;
+  z-index: 10;
+}
+
+.navigation-bar .first-li-container:hover + .product-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation-bar .product-wrapper:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation-bar .category-product-box {
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
   position: relative;
 }
 
-li a {
-  text-decoration: none;
-  color: white;
-  transition: all 0.5s ease;
-  font-size: 1.2rem; /* Increased font size for nav links */
-  font-weight: bolder;
-  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+.navigation-bar .hair-comb {
+  background: linear-gradient(
+      360deg,
+      rgba(23, 18, 0, 1) 0%,
+      rgba(0, 212, 255, 0) 58%
+    ),
+    url('./product-img/hair\ sponge.webp') no-repeat center;
+  background-size: cover;
+  transition-delay: 250ms;
 }
 
-li a:hover {
-  color: #ddd;
-  transform: scale(1.1);
+.navigation-bar .hair-oil {
+  background: linear-gradient(
+      360deg,
+      rgba(23, 18, 0, 1) 0%,
+      rgba(0, 212, 255, 0) 58%
+    ),
+    url('./product-img/hair\ gell.webp') no-repeat center;
+  background-size: cover;
+  transition-delay: 500ms;
 }
-li:hover {
-  animation: swing 0.5s ease-in-out forwards;
+
+.navigation-bar .hair-sponge {
+  background: linear-gradient(
+      360deg,
+      rgba(23, 18, 0, 1) 0%,
+      rgba(0, 212, 255, 0) 58%
+    ),
+    url('./product-img/hair\ sponge.webp') no-repeat center;
+  background-size: cover;
+  transition-delay: 750ms;
 }
-.home {
-  color: rgba(210, 180, 9, 0.884);
+
+.navigation-bar .beard-oil {
+  background: linear-gradient(
+      360deg,
+      rgba(23, 18, 0, 1) 0%,
+      rgba(0, 212, 255, 0) 58%
+    ),
+    url('./product-img/beard\ oil\ 1.webp') no-repeat center;
+  background-size: cover;
+  position: relative;
+  transition-delay: 1000ms;
 }
-.register-links {
+
+.navigation-bar .category-product-box .category-title {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  letter-spacing: 10px;
+}
+
+.navigation-bar .second-li-container li {
+  padding: 15px 0;
+}
+
+.car-brands-list-wrapper {
+  position: relative;
+  z-index: 20;
+}
+
+.navigation-bar .car-brands-container {
+  position: absolute;
   display: flex;
-  flex-direction: row;
-  margin-bottom: 1rem;
-  /* align-items: center;
-  text-align: center; */
+  flex-wrap: wrap;
+  width: 95vw;
+  left: -90%;
+  top: 30%;
+  padding-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 100ms ease-in-out;
+  z-index: 10;
 }
 
-.nav-logo {
-  height: 85px; /* Increased logo size */
-  transition: all 0.5s ease;
-  margin-top: 25px;
-  color: WHITE;
-  font-size: 2.2rem;
-  font-weight: bolder;
-  /* letter-spacing: -2px; */
-  text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
+.navigation-bar .car-brand {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  transition: all 100ms ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.burger {
+.navigation-bar .car-brand:hover {
+  background: #fff;
+}
+
+.navigation-bar .car-brand img {
+  width: 40px;
+  margin-left: 15px;
+}
+
+.navigation-bar .car-brand span {
+  margin-left: 5%;
+  color: #292f3b;
+}
+
+.navigation-bar .car-brand:hover span {
+  color: #bb8719;
+}
+
+.navigation-bar .second-li-container:hover + .car-brands-container {
+  opacity: 1;
+  visibility: visible;
+  transition: all 700ms ease-in-out;
+  z-index: 10;
+}
+
+.navigation-bar .car-brands-container:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.first-li-container.navigation-boxes,
+.third-li-container.navigation-boxes,
+.fourth-li-container.navigation-boxes,
+.fifth-li-container.navigation-boxes,
+.sixth-li-container.navigation-boxes,
+.seventh-li-container.navigation-boxes {
+  position: relative;
+  z-index: 40;
+}
+
+@media only screen and (max-width: 942px) {
+  .navigation-bar .product-wrapper {
+    top: 70%;
+  }
+
+  .navigation-bar .car-brands-container {
+    top: 45%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  section.navigation-bar {
+    display: none;
+  }
+}
+/* burger styles */
+
+nav.mobile {
+  background-color: black;
+  height: 50px;
+  padding: 0 16px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+nav.mobile a {
+  text-decoration: none;
+}
+
+nav.mobile li {
+  list-style-type: none;
+  text-shadow: none;
+}
+
+nav.mobile ul {
+  padding-left: 3%;
+}
+
+nav.mobile .m-menu__checkbox {
   display: none;
 }
 
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px;
-  transition: all 0.3s ease;
+nav.mobile label.m-menu__toggle {
+  cursor: pointer;
+}
+
+nav.mobile .m-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 400px;
+  width: calc(100vw - 30px);
+  height: 500px;
+  -moz-transform: translate3d(-450px, 0, 0);
+  -o-transform: translate3d(-450px, 0, 0);
+  -ms-transform: translate3d(-450px, 0, 0);
+  -webkit-transform: translate3d(-450px, 0, 0);
+  transform: translate3d(-450px, 0, 0);
+  -moz-transition: transform 0.35s;
+  -o-transition: transform 0.35s;
+  -webkit-transition: transform 0.35s;
+  transition: transform 0.35s;
+  z-index: 1;
+  overflow: hidden;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #3b3012 8%,
+      /* black */ #52441c 30%,
+      /* dark grey */ #52441c 40%,
+      /* darker grey */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #3b3012 8%,
+
+      /* black */ #493c18 30%,
+      /* dark grey */ #ac924b 62.5%,
+      /* darker grey */ #695828 100% /* darker grey */
+    );
+  color: white;
+  text-shadow: 0 4px 8px rgba(243, 236, 236, 0.648);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.912);
+}
+
+nav.mobile .m-menu__overlay {
+  background-color: rgba(103, 103, 103, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+
+nav.mobile .m-menu__header {
+  padding: 0 16px;
+  height: 50px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+nav.mobile .m-menu__header span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+nav.mobile .m-menu .m-menu {
+  -moz-transform: translate3d(480px, 0, 0);
+  -o-transform: translate3d(480px, 0, 0);
+  -ms-transform: translate3d(480px, 0, 0);
+  -webkit-transform: translate3d(480px, 0, 0);
+  transform: translate3d(480px, 0, 0);
+}
+
+nav.mobile .m-menu ul {
+  height: 100%;
+  overflow-y: auto;
+}
+
+nav.mobile .m-menu ul li a {
+  border: none !important;
+  margin: 0 !important;
+  text-decoration: none;
+}
+
+nav.mobile .m-menu ul li a,
+nav .m-menu ul li label {
+  display: block;
+  text-align: left;
+  line-height: 47px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  margin-left: 20px;
+  text-shadow: 0 4px 8px rgba(243, 236, 236, 0.648);
+}
+
+nav.mobile .m-menu ul li label.a-label__chevron::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-color: #333;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 50%;
+  margin-top: -5px;
+  right: 16px;
+}
+
+nav.mobile .m-menu ul li .-invisible {
+  border-bottom: 0;
+}
+
+nav.mobile .m-menu .m-menu label.m-menu__toggle {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  border-bottom: 0;
+  padding: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+nav.mobile .m-menu__checkbox:checked ~ .m-menu__overlay {
+  display: block;
+}
+
+nav.mobile .m-menu__checkbox:checked ~ .m-menu {
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.mobile-nav-wrapper {
+  display: none;
+  justify-content: space-between;
+  background: black;
+  align-items: center;
+  gap: 45px;
+}
+.mobile-title {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 4px 8px rgba(243, 236, 236, 0.648);
+}
+.mobile-nav-wrapper .mobile-logo-wrapper {
+  cursor: pointer;
+}
+
+.mobile-nav-wrapper .mobile-logo-wrapper .mobile-logo {
+  max-width: 200px;
+  width: 100%;
+  float: right;
+  margin-right: 10px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-nav-wrapper {
+    display: flex;
+  }
 }

@@ -87,39 +87,41 @@ function CarouselComponent() {
   ];
 
   return (
-    <div className="carousel">
-      <div className="list">
-        {/* Mapping carousel items */}
-        {carouselItems.map((item, index) => (
-          <div className="item" key={index}>
-            <img src={item.image} alt="" />
-            <div className="content">
-              <div className="author">{item.author}</div>
-              <div className="topic">{item.topic}</div>
-              <div className="buttons"></div>
+    <div className="styles-container">
+      <div className="carousel">
+        <div className="list">
+          {/* Mapping carousel items */}
+          {carouselItems.map((item, index) => (
+            <div className="item" key={index}>
+              <img src={item.image} alt="" />
+              <div className="content">
+                <div className="author">{item.author}</div>
+                <div className="topic">{item.topic}</div>
+                <div className="buttons"></div>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      {/* thumbnail images */}
-      <div className="thumbnail">
-        {/* Mapping thumbnail items */}
-        {thumbnailItems.map((item, index) => (
-          <div className="item" key={index}>
-            <img src={item.image} alt="" />
-            <div className="content">
-              <div className="title">{item.title}</div>
-              <div className="des">{item.description}</div>
+          ))}
+        </div>
+        {/* thumbnail images */}
+        <div className="thumbnail">
+          {/* Mapping thumbnail items */}
+          {thumbnailItems.map((item, index) => (
+            <div className="item" key={index}>
+              <img src={item.image} alt="" />
+              <div className="content">
+                <div className="title">{item.title}</div>
+                <div className="des">{item.description}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        {/* arrows */}
+        <div className="arrows">
+          <button id="prev">&lt;</button>
+          <button id="next">&gt;</button>
+        </div>
+        <div className="time"></div>
       </div>
-      {/* arrows */}
-      <div className="arrows">
-        <button id="prev">&lt;</button>
-        <button id="next">&gt;</button>
-      </div>
-      <div className="time"></div>
     </div>
   );
 }

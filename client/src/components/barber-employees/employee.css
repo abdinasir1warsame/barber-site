@@ -1242,6 +1242,9 @@ thead tr:nth-child(3) th {
 }
 @media (max-width: 800px) {
   /* Assuming lg breakpoint at 1024px */
+  .employee-container {
+    min-height: 100%;
+  }
   .employee-section {
     /* position: relative; */
     margin-top: 1rem;
@@ -1254,6 +1257,15 @@ thead tr:nth-child(3) th {
     background-color: WHITE;
     /* padding: 50px; */
     max-width: 100%;
+    margin-bottom: 0px;
+  }
+  .title-box {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #1e1e1e;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    font-weight: bolder;
   }
   .barber-card {
     position: relative;
@@ -1438,5 +1450,8 @@ thead tr:nth-child(3) th {
     margin-top: 10px;
     font-size: 0.7em;
     text-shadow: 0 4px 8px #fff;
+  }
+  .section-sep {
+    margin-top: 0px;
   }
 }
