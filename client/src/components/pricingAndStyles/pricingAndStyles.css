@@ -204,6 +204,7 @@
   font-weight: bold;
   font-size: 5em;
   list-style: 1.3em;
+  color: white;
 }
 .carousel .list .item .content .topic {
   color: rgba(210, 180, 9, 0.884);
@@ -531,7 +532,7 @@
     justify-content: center;
     align-items: center;
     width: 97vw;
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
   .carousel {
     width: 95vw;
@@ -583,7 +584,7 @@
   }
 
   .item__title {
-    font: 17px cookie, cursive;
+    font: 20px cookie, cursive;
     color: black;
 
     letter-spacing: 2px;
@@ -662,6 +663,7 @@
     border-radius: 5px;
     color: black;
     padding: 0;
+    padding-top: 10px;
     text-align: center;
     text-shadow: 0 5px 10px rgba(255, 255, 255, 0.962);
     font-weight: bold;
@@ -671,7 +673,7 @@
 
     font-size: 15px;
     width: 150px;
-    height: 35px;
+    height: 45px;
     background: linear-gradient(
       to bottom right,
 
@@ -696,6 +698,7 @@
     border-radius: 5px;
     color: black;
     padding: 0;
+    padding-top: 10px;
     text-align: center;
     text-shadow: 0 5px 10px rgba(255, 255, 255, 0.962);
     font-weight: bold;
@@ -705,7 +708,7 @@
 
     font-size: 15px;
     width: 150px;
-    height: 40px;
+    height: 45px;
     background: linear-gradient(
       to bottom right,
       #e5e5e5 5%,
@@ -723,10 +726,88 @@
   }
   .title-box5 {
     margin-top: 7rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     text-align: center;
     color: #1e1e1e;
     text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     font-weight: bolder;
+  }
+  .carousel .list .item .content .author {
+    font-weight: bold;
+    letter-spacing: 0px;
+    font-size: 22px;
+  }
+  .carousel .list .item .content {
+    position: absolute;
+    top: 3%;
+    width: 100vw;
+    max-width: 80%;
+    left: 43%;
+    transform: translateX(-50%);
+    padding-right: 0%;
+    box-sizing: border-box;
+    color: white;
+    text-shadow: 0 8px 20px rgb(0, 0, 0);
+    font-weight: bolder;
+    font-weight: 700;
+  }
+
+  .carousel .list .item .content .topic {
+    font-weight: bold;
+    font-size: 2.5em;
+    list-style: 1.3em;
+  }
+  /* arrows */
+  .arrows {
+    position: absolute;
+    top: 75%;
+    right: 67%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 18px;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: center; */
+  }
+  .arrows button {
+    width: 50%;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      );
+    background-size: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle box shadow */
+    background-size: cover;
+    border: none;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 27px;
+
+    text-shadow: 0 4px 8px black;
+    transition: 0.5s;
+    z-index: 100;
+  }
+
+  .arrows button:hover {
+    transform: scale(1.1) translateZ(20px);
+
+    transition: transform 0.8s ease; /* Slower scaling transition */
+    cursor: pointer;
   }
 }
