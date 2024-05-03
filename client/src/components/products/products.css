@@ -177,6 +177,7 @@
   transition: all ease 0.5s;
   -webkit-transform: translateY(60px);
   transform: translateY(60px);
+  cursor: not-allowed;
 }
 
 .disbut:hover {

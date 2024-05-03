@@ -472,7 +472,7 @@ const Employee = () => {
                   </div>
                 </div>
 
-                <div className="modal-btn-div">
+                <div id="modal-btn-div" className="modal-btn-div">
                   <div className="employee-name-div">
                     <h1 className="employee-name">{selectedBarberName}</h1>
                   </div>

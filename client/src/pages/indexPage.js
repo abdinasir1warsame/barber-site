@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 import Hero from '../components/hero/hero';
 import Intro from '../components/intro/intro';
@@ -11,7 +12,7 @@ import Footer from '../components/footer/footer';
 
 const IndexPage = () => {
   return (
-    <div>
+    <div className="index-container">
       {' '}
       <Hero />
       <Intro />
