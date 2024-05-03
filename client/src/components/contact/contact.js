@@ -36,15 +36,15 @@ const Contact = () => {
             <div className="contact-us">
               <div className="contact-titles"> Contact</div>
               <p className="contact-text">
-                For prompt response, please use our Tawk online chat feature or
-                text your Barber’s mobile directly. Otherwise, you may call us
-                at (424) 393-4015.
+                For prompt assistance, please text or call us directly at
+                07482298173. Thank you for choosing our services, and we look
+                forward to assisting you!
               </p>
             </div>
             <div className="shop-location">
               <div className="contact-titles"> Shop Location</div>
               <div>
-                <p>5610 W. Manchester Ave. Los Angeles, CA 90045</p>{' '}
+                <p>191 Alma Street. Birmingham, B19 2RL</p>{' '}
               </div>
             </div>
           </div>

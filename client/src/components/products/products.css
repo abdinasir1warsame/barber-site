@@ -177,6 +177,7 @@
   transition: all ease 0.5s;
   -webkit-transform: translateY(60px);
   transform: translateY(60px);
+  cursor: not-allowed;
 }
 
 .disbut:hover {
@@ -262,6 +263,14 @@
     top: -78px;
     z-index: 20;
     position: relative;
+    font-weight: bolder;
+  }
+  .title-box3 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #1e1e1e;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     font-weight: bolder;
   }
 }

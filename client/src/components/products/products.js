@@ -27,7 +27,7 @@ const Products = () => {
             </div>
             <div className="disprice">$129.95</div>
             <button className="disbut">
-              <i className="fa fa-shopping-cart faspace"></i> ADD TO CART
+              <i className="fa fa-shopping-cart faspace"></i> AVAILABLE IN STORE
             </button>
           </div>
         </div>
@@ -43,7 +43,7 @@ const Products = () => {
             </div>
             <div className="disprice">$129.95</div>
             <button className="disbut">
-              <i className="fa fa-shopping-cart faspace"></i> ADD TO CART
+              <i className="fa fa-shopping-cart faspace"></i> AVAILABLE IN STORE
             </button>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Products = () => {
             </div>
             <div className="disprice">$129.95</div>
             <button className="disbut">
-              <i className="fa fa-shopping-cart faspace"></i> ADD TO CART
+              <i className="fa fa-shopping-cart faspace"></i> AVAILABLE IN STORE
             </button>
           </div>
         </div>
@@ -75,7 +75,7 @@ const Products = () => {
             </div>
             <div className="disprice">$129.95</div>
             <button className="disbut">
-              <i className="fa fa-shopping-cart faspace"></i> ADD TO CART
+              <i className="fa fa-shopping-cart faspace"></i> AVAILABLE IN STORE
             </button>
           </div>
         </div>
@@ -91,7 +91,7 @@ const Products = () => {
             </div>
             <div className="disprice">$129.95</div>
             <button className="disbut">
-              <i className="fa fa-shopping-cart faspace"></i> ADD TO CART
+              <i className="fa fa-shopping-cart faspace"></i> AVAILABLE IN STORE
             </button>
           </div>
         </div>
@@ -107,11 +107,12 @@ const Products = () => {
             </div>
             <div className="disprice">$129.95</div>
             <button className="disbut">
-              <i className="fa fa-shopping-cart faspace"></i> ADD TO CART
+              <i className="fa fa-shopping-cart faspace"></i> AVAILABLE IN STORE
             </button>
           </div>
         </div>
       </div>
+
       <div className="section-sep2"></div>
     </div>
   );
