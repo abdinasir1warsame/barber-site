@@ -13,12 +13,30 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       await axios.post('/logout', {}, { withCredentials: true });
+      // Clear token from local storage or state
+      localStorage.removeItem('token'); // If using local storage
       setUser(null); // Clear user context
       setLoggedOut(true);
     } catch (error) {
       console.error('Logout failed:', error);
     }
   };
+
+  // Example of handling expired token response from server
+  axios.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      if (error.response && error.response.status === 401) {
+        // Token expired or invalid
+        // Clear token from local storage or state
+        localStorage.removeItem('token'); // If using local storage
+        setUser(null); // Clear user context
+        // Redirect to login page or display message
+        return Promise.reject(error);
+      }
+      return Promise.reject(error);
+    }
+  );
 
   if (loggedOut) {
     return <Navigate to={'/'} />;
