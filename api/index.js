@@ -22,6 +22,10 @@ app.use(
 
 mongoose.connect(process.env.MONGO_URL);
 
+app.post('/logout', (req, res) => {
+  res.clearCookie('token').json({ message: 'Logged out successfully' });
+});
+
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
   try {

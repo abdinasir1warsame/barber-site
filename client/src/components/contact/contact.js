@@ -6,7 +6,9 @@ const Contact = () => {
     <div>
       <div className="col-sm-12">
         <div className="title-box3 ">
-          <h3 className="title-a">Discover More About Our Shop</h3>
+          <h3 id="contact" className="title-a">
+            Discover More About Our Shop
+          </h3>
           <p className="subtitle-a">
             Unveil Everything You Need to Know: From Our Location to Opening
             Times and Contact Information

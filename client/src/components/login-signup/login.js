@@ -3,12 +3,16 @@ import axios from 'axios';
 import './login-signup.css';
 import { Navigate } from 'react-router-dom';
 import { UserContext } from '../userContext/usercontext';
+import SuccessLoginModal from '../alert-modals/success-login';
+import FailedLoginModal from '../alert-modals/failed-login';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
   const { setUser } = useContext(UserContext);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showFailedModal, setShowFailedModal] = useState(false);
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
@@ -19,10 +23,12 @@ const Login = () => {
       );
       const userData = response.data;
       setUser(userData);
-      alert('login succesful');
-      setRedirect(true);
+      setShowSuccessModal(true);
+      setTimeout(() => {
+        setRedirect(true);
+      }, 2500);
     } catch (e) {
-      alert('login failed');
+      setShowFailedModal(true);
     }
   }
   if (redirect) {
@@ -93,6 +99,9 @@ const Login = () => {
           </div>
         </div>
       </section>
+      {showSuccessModal && <SuccessLoginModal />}
+      {/* Failed modal */}
+      {showFailedModal && <FailedLoginModal />}
     </div>
   );
 };

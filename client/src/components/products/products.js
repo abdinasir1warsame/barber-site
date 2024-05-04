@@ -6,7 +6,9 @@ const Products = () => {
     <div>
       <div className="col-sm-12">
         <div className="title-box3 ">
-          <h3 className="title-a">Premium Grooming Essentials</h3>
+          <h3 id="products" className="title-a">
+            Premium Grooming Essentials
+          </h3>
           <p className="subtitle-a">
             From Beard Care to Styling Essentials: Discover Quality Products to
             Enhance Your Daily Routine and Elevate Your Look!
