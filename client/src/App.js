@@ -20,14 +20,14 @@ function App() {
 
   useEffect(() => {
     // Check if it's the index page
-    const isIndexPage = location.pathname === '/home'; // Assuming index route is "/"
+    const isIndexPage = location.pathname === '/'; // Assuming index route is "/"
     // Check if it's the first load or refresh of the index page
     const isFirstLoadOrRefresh = isIndexPage && !location.state;
 
     if (isFirstLoadOrRefresh) {
       setTimeout(() => {
         setShowLoader(false);
-      }, 2000); // 5 seconds
+      }, 2500); // 5 seconds
     } else {
       setShowLoader(false);
     }

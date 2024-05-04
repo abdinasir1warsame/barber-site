@@ -19,11 +19,26 @@
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   z-index: 1000; /* Ensure it appears on top of other elements */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 8px black;
 }
 
 #upper-side {
   padding: 2em;
-  background-color: #8bc34a;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #006400 8%,
+      /* Dark green */ #004d00 30%,
+      /* Dark green */ #003300ca 40%,
+      /* Dark green */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #00cc00 8%,
+      /* Dark green */ #009900 25%,
+      /* Dark green */ #026a02 62.5%,
+      /* Dark green */ #026f02 100% /* Dark green */
+    );
   display: block;
   color: #fff;
   border-top-right-radius: 8px;
@@ -31,12 +46,26 @@
 }
 #upper-side-failed {
   padding: 2em;
-  background-color: #c5210f;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #8b0000 8%,
+      /* Dark red */ #800000 30%,
+      /* Dark red */ #8b0000 40%,
+      /* Dark red */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ff0000 8%,
+      /* Red */ #b22222 25%,
+      /* Firebrick */ #a52a2a 62.5%,
+      /* Brown */ #8b0000 100% /* Dark red */
+    );
   display: block;
   color: #fff;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
+
 #checkmark {
   font-weight: lighter;
   fill: #fff;
@@ -62,9 +91,11 @@
 
 #message {
   margin-top: -0.5em;
-  color: #757575;
+  color: rgb(0, 0, 0);
+
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.475);
   letter-spacing: 1px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -72,7 +103,20 @@
   position: relative;
   top: 1.5em;
   text-decoration: none;
-  background: #8bc34a;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #006400 8%,
+      /* Dark green */ #004d00 30%,
+      /* Dark green */ #003300ca 40%,
+      /* Dark green */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #00cc00 8%,
+      /* Dark green */ #009900 25%,
+      /* Dark green */ #026a02 62.5%,
+      /* Dark green */ #026f02 100% /* Dark green */
+    );
   color: #fff;
   margin: auto;
   padding: 0.8em 3em;
@@ -100,7 +144,20 @@
   position: relative;
   top: 1.5em;
   text-decoration: none;
-  background: #c5210f;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #8b0000 8%,
+      /* Dark red */ #800000 30%,
+      /* Dark red */ #8b0000 40%,
+      /* Dark red */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ff0000 8%,
+      /* Red */ #b22222 25%,
+      /* Firebrick */ #a52a2a 62.5%,
+      /* Brown */ #8b0000 100% /* Dark red */
+    );
   color: #fff;
   margin: auto;
   padding: 0.8em 3em;
