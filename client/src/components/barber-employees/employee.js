@@ -38,7 +38,7 @@ const Employee = () => {
       service,
       barberName,
     });
-    const bookingId = response.data._id;
+    const bookingId = response.data._id.slice(0, 15);
     setShowSuccessModal(true);
     setBookingId(bookingId);
     console.log(bookingId);
