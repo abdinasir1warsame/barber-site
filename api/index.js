@@ -25,33 +25,11 @@ app.use(
 mongoose.connect(
   'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
 );
-const RevokedToken = mongoose.model('RevokedToken', {
-  token: String,
-});
-
-// Logout route handler
-app.post('/logout', async (req, res) => {
-  const token = req.cookies.token;
-  if (token) {
-    await RevokedToken.create({ token });
-  }
+app.post('/logout', (req, res) => {
   res
     .clearCookie('token', { path: '/' })
+    .status(200)
     .json({ message: 'Logged out successfully' });
-});
-
-// Middleware to check if token is revoked
-app.use(async (req, res, next) => {
-  const token = req.cookies.token;
-  if (token) {
-    const isRevoked = await RevokedToken.exists({ token });
-    if (isRevoked) {
-      return res
-        .status(401)
-        .json({ message: 'Token revoked. Please log in again.' });
-    }
-  }
-  next();
 });
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
