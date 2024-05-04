@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   if (loggedOut) {
-    window.location.href = 'https://barber-site-seven.vercel.app';
+    window.location.href = '/';
   }
 
   return (
