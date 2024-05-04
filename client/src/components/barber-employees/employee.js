@@ -5,7 +5,6 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import SuccessBookingModal from '../alert-modals/booking-complete';
-import NavBar from '../navBar/navBar';
 
 import './employee.css';
 import barberImage1 from '../../assets/employee-card/barber1.webp';
@@ -38,7 +37,7 @@ const Employee = () => {
       service,
       barberName,
     });
-    const bookingId = response.data._id;
+    const bookingId = response.data._id.slice(0, 15);
     setShowSuccessModal(true);
     setBookingId(bookingId);
     console.log(bookingId);
