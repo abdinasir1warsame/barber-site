@@ -9,7 +9,6 @@ import Products from '../components/products/products';
 import Contact from '../components/contact/contact';
 import Faq from '../components/faqs/faq';
 import Footer from '../components/footer/footer';
-import SuccessBookingModal from '../components/alert-modals/booking-complete';
 
 const IndexPage = () => {
   return (
