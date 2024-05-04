@@ -26,8 +26,12 @@ mongoose.connect(
   'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
 );
 app.post('/logout', (req, res) => {
-  res.clearCookie('token').json({ message: 'Logged out successfull' });
+  res
+    .clearCookie('token', { path: '/' })
+    .status(200)
+    .json({ message: 'Logged out successfully' });
 });
+
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
   try {
