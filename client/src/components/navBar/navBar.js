@@ -1,11 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavLogo from './product-img/perfect-logo.png';
 import './navBar.css';
 import { UserContext } from '../userContext/usercontext';
+// import { Navigate } from 'react-router-dom';
 const NavBar = () => {
   const { user } = useContext(UserContext);
-  // console.log(user);
+  const { setUser } = useContext(UserContext);
+  const [loggedOut, setLoggedOut] = useState(false);
+
+  const handleLogout = async () => {
+    try {
+      await axios.post('/logout', {}, { withCredentials: true });
+      setUser(null); // Clear user context
+      setLoggedOut(true);
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
+
+  if (loggedOut) {
+    window.location.href = 'https://barber-site-seven.vercel.app';
+  }
+
   return (
     <div>
       <div className="mobile-nav-wrapper">
@@ -51,7 +69,7 @@ const NavBar = () => {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </label>
-              <span>Abdinasir Warsame</span>
+              <span id="user-name">{user ? user.name : 'Menu'}</span>
             </div>
             <ul>
               <li>
@@ -127,6 +145,25 @@ const NavBar = () => {
               <li>
                 <label>Faq us</label>
               </li>
+              {!!user && (
+                <li onClick={handleLogout}>
+                  <label>Log Out</label>
+                </li>
+              )}
+              {!user && (
+                <Link to={'/login'}>
+                  <li className="login-mobile">
+                    <label>Log In</label>
+                  </li>
+                </Link>
+              )}
+              {!user && (
+                <Link to={'/signUp'}>
+                  <li>
+                    <label>Sign Up</label>
+                  </li>
+                </Link>
+              )}
             </ul>
           </div>
         </nav>
@@ -143,9 +180,14 @@ const NavBar = () => {
             <ul className="navigation-list">
               <li>Home</li>
 
-              <li>Our Products</li>
+              <a href="#products">
+                {' '}
+                <li>Our Products</li>
+              </a>
 
-              <li>Contact Us</li>
+              <a href="#contact">
+                <li>Contact Us</li>
+              </a>
             </ul>
           </div>
           <div className="second-half">
@@ -157,10 +199,10 @@ const NavBar = () => {
               {' '}
               {!user && <li>Sign Up</li>}
             </Link>
-            <Link to={'/signUp'} className="login-sign-btn">
+            <div onClick={handleLogout} className="login-sign-btn">
               {' '}
               {!!user && <li className="logOutBtn">LOG OUT</li>}
-            </Link>
+            </div>
           </div>
         </div>
       </section>

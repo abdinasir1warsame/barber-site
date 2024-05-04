@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './login-signup.css';
 import axios from 'axios';
+import SuccessRegisterModal from '../alert-modals/success-register';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   async function registerUser(ev) {
     ev.preventDefault();
     try {
       await axios.post('/signUp', { name, email, password });
-      alert('Registration successful. now you can log in');
+      setShowSuccessModal(true);
     } catch (e) {
       alert('Registration failed please try again later');
     }
@@ -111,6 +113,7 @@ const Signup = () => {
           </div>
         </div>
       </section>
+      {showSuccessModal && <SuccessRegisterModal />}
     </div>
   );
 };

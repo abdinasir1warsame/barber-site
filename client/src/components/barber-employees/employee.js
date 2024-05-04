@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import SuccessBookingModal from '../alert-modals/booking-complete';
+import NavBar from '../navBar/navBar';
 
 import './employee.css';
 import barberImage1 from '../../assets/employee-card/barber1.webp';
@@ -22,13 +24,14 @@ const Employee = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [dateError, setDateError] = useState(false);
   const [timeError, setTimeError] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [bookingId, setBookingId] = useState(null);
 
   async function completeBooking() {
     const service = activeService !== null ? services[activeService] : null;
     const date = selectedDate ? selectedDate.toISOString().split('T')[0] : '';
     const time = activeTimeSlot !== null ? timeSlots[activeTimeSlot] : '';
     const barberName = selectedBarberName;
-
     const response = await axios.post('/bookings', {
       time,
       date,
@@ -36,9 +39,10 @@ const Employee = () => {
       barberName,
     });
     const bookingId = response.data._id;
+    setShowSuccessModal(true);
+    setBookingId(bookingId);
     console.log(bookingId);
   }
-
   const MyDatePicker = () => {
     const handleDateChange = (date) => {
       setSelectedDate(date);
@@ -152,7 +156,9 @@ const Employee = () => {
       <div className=" employee-container">
         <div className="col-sm-12">
           <div className="title-box ">
-            <h3 className="title-a">Our Selection Of Professionals</h3>
+            <h3 id="book" className="title-a">
+              Our Selection Of Professionals
+            </h3>
             <p className="subtitle-a">
               Meet Our Skilled Team of Barbers: Where Every Cut Tells a Story
               and Every Style is Crafted with Precision and Passion!
@@ -382,6 +388,7 @@ const Employee = () => {
       </div>
       <div>
         {/* <button onClick={handleOpenModal}>Open Modal</button> */}
+        {showSuccessModal && <SuccessBookingModal bookingId={bookingId} />}
         <div
           className={`modal fade ${
             showModal

@@ -8,7 +8,10 @@ const Hero = () => {
 
       <div className="banner-overlay">
         <h1 className="banner-title">WARSAME'S BARBER</h1>
-        <button className="banner-button">BOOK NOW</button>
+        <a href="#book">
+          {' '}
+          <button className="banner-button">BOOK NOW</button>
+        </a>
       </div>
     </div>
   );

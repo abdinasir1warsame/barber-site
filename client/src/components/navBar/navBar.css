@@ -116,7 +116,7 @@ section.navigation-bar {
   text-shadow: 0 4px 8px rgba(210, 180, 9, 0.884);
 
   font-family: 'Montserrat', sans-serif;
-
+  cursor: pointer;
   text-align: center;
   padding: 15px 0px;
   color: white;
@@ -539,6 +539,9 @@ nav.mobile .m-menu__checkbox:checked ~ .m-menu {
   float: right;
   margin-right: 10px;
   padding: 20px;
+}
+.login-mobile {
+  margin-top: 50px;
 }
 
 @media only screen and (max-width: 768px) {
