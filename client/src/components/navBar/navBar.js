@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import NavLogo from './product-img/perfect-logo.png';
 import './navBar.css';
 import { UserContext } from '../userContext/usercontext';
-// import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 const NavBar = () => {
   const { user } = useContext(UserContext);
   const { setUser } = useContext(UserContext);
@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   if (loggedOut) {
-    window.location.href = '/';
+    return <Navigate to={'/'} />;
   }
 
   return (
