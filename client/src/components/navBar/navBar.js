@@ -6,22 +6,14 @@ import './navBar.css';
 import { UserContext } from '../userContext/usercontext';
 // import { Navigate } from 'react-router-dom';
 const NavBar = () => {
-  const { user } = useContext(UserContext);
-  const { setUser } = useContext(UserContext);
-  const [loggedOut, setLoggedOut] = useState(false);
+  const { user, setUser } = useContext(UserContext);
 
-  const handleLogout = async () => {
-    try {
-      await axios.post('/logout', {}, { withCredentials: true });
-      setUser(null); // Clear user context
-      setLoggedOut(true);
-    } catch (error) {
-      console.error('Logout failed:', error);
-    }
-  };
+  const [toHomePage, setToHomepage] = useState(null);
 
-  if (loggedOut) {
-    window.location.href = 'http://192.168.182.1:3000';
+  async function logout() {
+    await axios.post('/logout');
+    setUser(null);
+    setToHomepage('/');
   }
 
   return (
@@ -109,27 +101,27 @@ const NavBar = () => {
                   </div>
                   <ul>
                     <li>
-                      <a href="">
+                      <a href="#products">
                         <label>Beard Oil</label>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#products">
                         <label>Hair Comb</label>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#products">
                         <label>Hair Brush</label>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#products">
                         <label>Hair Sponge</label>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#products">
                         <label>Hair Oil</label>
                       </a>
                     </li>
@@ -146,7 +138,7 @@ const NavBar = () => {
                 <label>Faq us</label>
               </li>
               {!!user && (
-                <li onClick={handleLogout}>
+                <li onClick={logout}>
                   <label>Log Out</label>
                 </li>
               )}
@@ -199,7 +191,7 @@ const NavBar = () => {
               {' '}
               {!user && <li>Sign Up</li>}
             </Link>
-            <div onClick={handleLogout} className="login-sign-btn">
+            <div onClick={logout} className="login-sign-btn">
               {' '}
               {!!user && <li className="logOutBtn">LOG OUT</li>}
             </div>

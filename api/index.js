@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 const bcryptSalt = bcrypt.genSaltSync(12);
-const jwtSecret = 'your_jwt_secret_here'; // Replace with a strong random secret
+const jwtSecret = 'yourjwtsecrethere'; // Replace with a strong random secret
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -23,9 +23,8 @@ app.use(
 mongoose.connect(process.env.MONGO_URL);
 
 app.post('/logout', (req, res) => {
-  res.clearCookie('token').json({ message: 'Logged out successfully' });
+  res.cookie('token', '').json(true);
 });
-
 app.post('/signUp', async (req, res) => {
   const { name, email, password } = req.body;
   try {
@@ -81,6 +80,7 @@ app.get('/profile', (req, res) => {
     res.json(null);
   }
 });
+
 app.post('/bookings', async (req, res) => {
   const { date, time, service, barberName } = req.body;
   try {

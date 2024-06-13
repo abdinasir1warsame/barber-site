@@ -17,7 +17,7 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="displaybox">
+      <div id="products" className="displaybox">
         <div className="roll">
           <div className="dis dis1">
             <div className="distopwrap">
