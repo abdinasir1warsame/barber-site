@@ -42,16 +42,7 @@ app.post('/signUp', async (req, res) => {
     res.status(422).json(e);
   }
 });
-app.options('/login', (req, res) => {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://barber-site-seven.vercel.app'
-  );
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.sendStatus(204); // No content
-});
+
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const userDoc = await User.findOne({ email });
@@ -61,24 +52,17 @@ app.post('/login', async (req, res) => {
       jwt.sign(
         { email: userDoc.email, id: userDoc._id },
         jwtSecret,
-        { expiresIn: '7d' },
+        {},
         (err, token) => {
           if (err) throw err;
-          res
-            .cookie('token', token, {
-              httpOnly: true,
-              maxAge: 7 * 24 * 60 * 60 * 1000,
-              sameSite: 'None', // Set sameSite to "None"
-              secure: true,
-            })
-            .json(userDoc);
+          res.cookie('token', token).json(userDoc);
         }
       );
     } else {
-      res.status(422).json('Password incorrect');
+      res.json('password not ok');
     }
   } else {
-    res.status(404).json('User not found');
+    res.status(422).json('user not found');
   }
 });
 app.options('/profile', (req, res) => {
