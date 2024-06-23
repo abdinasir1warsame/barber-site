@@ -10,6 +10,7 @@ import Loader from './components/loader/loader';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './pages/layout';
 import IndexPage from './pages/indexPage';
+import Bookings from './pages/bookings';
 import LoginPage from './pages/loginPage';
 import SignUpPage from './pages/signUpPage';
 import { UserContextProvider } from './components/userContext/usercontext';
@@ -45,6 +46,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<IndexPage />}></Route>
+              <Route path="/Bookings" element={<Bookings />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/signUp" element={<SignUpPage />}></Route>
             </Route>

@@ -45,10 +45,12 @@ const SuccessBookingModal = ({ bookingId }) => {
         <div id="lower-side">
           <p id="message">
             {' '}
-            Booking ID: <br /> {bookingId}
+            Booking ID:
+            <br /> {bookingId}
           </p>
+          <br></br>
 
-          <Link to={'./login'}>
+          <Link to={'./bookings'}>
             <div id="contBtn">View Booking</div>
           </Link>
         </div>

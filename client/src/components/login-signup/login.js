@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import './login-signup.css';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Use useNavigate hook instead of Navigate component
 import { UserContext } from '../userContext/usercontext';
 import SuccessLoginModal from '../alert-modals/success-login';
 import FailedLoginModal from '../alert-modals/failed-login';
@@ -13,6 +13,8 @@ const Login = () => {
   const { setUser } = useContext(UserContext);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showFailedModal, setShowFailedModal] = useState(false);
+  const navigate = useNavigate();
+
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
@@ -31,9 +33,23 @@ const Login = () => {
       setShowFailedModal(true);
     }
   }
-  if (redirect) {
-    return <Navigate to={'/'} />;
-  }
+
+  // Scroll to #employee after redirecting
+  useEffect(() => {
+    if (redirect) {
+      // Navigate to home page with the hash
+      navigate('/#book', { replace: true });
+
+      // After navigating, wait for DOM to load and scroll to the section
+      setTimeout(() => {
+        const element = document.getElementById('book');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Adjust the delay as needed to ensure the DOM is ready
+    }
+  }, [redirect, navigate]);
+
   return (
     <div className="">
       <section className="vh-100 bg-image ">
@@ -75,7 +91,7 @@ const Login = () => {
                       </div>
 
                       <p className="text-center  mb-4 ">
-                        Dont have an account?{' '}
+                        Don't have an account?{' '}
                         <a href="/signUp" className="fw-bold login-here-text">
                           <u>Register here</u>
                         </a>
