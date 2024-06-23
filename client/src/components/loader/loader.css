@@ -97,9 +97,8 @@
   overflow: hidden;
   border-top-left-radius: 50% 80%;
   border-top-right-radius: 50% 80%;
-  /*   border-bottom-left-radius: 50% 80%;
-    border-bottom-right-radius: 50% 80%; */
 }
+
 .pole-bottom .cover {
   width: var(--base-size);
   height: calc(var(--base-size) * 0.45);
@@ -108,10 +107,10 @@
   border: 4px solid var(--border);
   background-color: var(--part-base);
   overflow: hidden;
-
   border-bottom-left-radius: 50% 80%;
   border-bottom-right-radius: 50% 80%;
 }
+
 .shadow {
   margin-top: 25px;
   position: relative;
@@ -119,7 +118,6 @@
   height: 15px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
-
   align-items: center;
   margin-left: 6px;
 }
@@ -142,7 +140,6 @@
 }
 
 .band {
-  width: ;
   height: 15px;
   margin: 0 auto;
   position: relative;
@@ -250,5 +247,63 @@
   }
   100% {
     background-position: 0% 176px;
+  }
+}
+
+/* Media Query for widths between 370px and 750px */
+@media (min-width: 370px) and (max-width: 750px) {
+  :root {
+    --gradient-unit: 10px; /* Half the original value */
+    --base-size: 40px; /* Half the original value */
+    --base-spacing: 4px; /* Half the original value */
+  }
+
+  .unit {
+    padding: 0 30px; /* Half the original value */
+  }
+
+  .thin-band {
+    border-width: 2px; /* Half the original value */
+  }
+
+  .ball {
+    width: 12px; /* Half the original value */
+    height: 12px; /* Half the original value */
+    border-width: 2px; /* Half the original value */
+  }
+
+  .ball:after {
+    width: 2px; /* Half the original value */
+    height: 5px; /* Half the original value */
+  }
+
+  .pole-top .ball:after,
+  .pole-bottom .ball:after {
+    top: 9px; /* Half the original value */
+    bottom: 9px; /* Half the original value */
+  }
+
+  .pole-top .cover,
+  .pole-bottom .cover {
+    border-width: 2px; /* Half the original value */
+  }
+
+  .shadow {
+    width: 40px; /* Half the original value */
+    height: 7.5px; /* Half the original value */
+    margin-left: 3px; /* Half the original value */
+  }
+
+  .band {
+    height: 7.5px; /* Half the original value */
+    border-width: 2px; /* Half the original value */
+  }
+
+  .g-container {
+    border-width: 2px; /* Half the original value */
+  }
+
+  .pole {
+    background-size: 100% 44px; /* Half the original value */
   }
 }

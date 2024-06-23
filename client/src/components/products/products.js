@@ -3,7 +3,7 @@ import './products.css';
 
 const Products = () => {
   return (
-    <div>
+    <div data-aos="fade-down">
       <div className="col-sm-12">
         <div className="title-box3 ">
           <h3 id="products" className="title-a">
@@ -18,7 +18,7 @@ const Products = () => {
       </div>
 
       <div className="displaybox">
-        <div className="roll">
+        <div data-aos="fade-up" className="roll">
           <div className="dis dis1">
             <div className="distopwrap">
               <div className="dislogo dislogo1"></div>
@@ -34,7 +34,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="roll">
+        <div className="roll" data-aos="fade-up" data-aos-delay="100">
           <div className="dis dis2">
             <div className="distopwrap">
               <div className="dislogo dislogo1"></div>
@@ -50,7 +50,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="roll">
+        <div className="roll" data-aos="fade-up" data-aos-delay="200">
           <div className="dis dis3">
             <div className="distopwrap">
               <div className="dislogo dislogo1"></div>
@@ -66,7 +66,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="roll">
+        <div className="roll" data-aos="fade-up" data-aos-delay="300">
           <div className="dis dis4">
             <div className="distopwrap">
               <div className="dislogo dislogo1"></div>
@@ -82,7 +82,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="roll">
+        <div className="roll" data-aos="fade-up" data-aos-delay="400">
           <div className="dis dis5">
             <div className="distopwrap">
               <div className="dislogo dislogo1"></div>
@@ -98,7 +98,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="roll">
+        <div className="roll" data-aos="fade-up" data-aos-delay="500">
           <div className="dis dis6">
             <div className="distopwrap">
               <div className="dislogo dislogo1"></div>

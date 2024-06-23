@@ -100,7 +100,7 @@ const PricingMenu = () => {
   };
 
   return (
-    <div className="pricing">
+    <div data-aos="slide-right" data-aos-duration="1500" className="pricing">
       <div className="wrapper">
         {/* <div className="menu-title">
           <h2 className="menu-header">Services</h2>

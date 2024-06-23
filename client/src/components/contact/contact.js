@@ -3,7 +3,7 @@ import './contact.css';
 
 const Contact = () => {
   return (
-    <div>
+    <div data-aos="fade-down">
       <div className="col-sm-12">
         <div className="title-box3 ">
           <h3 id="contact" className="title-a">
@@ -16,25 +16,39 @@ const Contact = () => {
           <div className="line-mf3"></div>
         </div>
       </div>
-      <div className=" faq-title-section">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="250"
+        className=" faq-title-section"
+      >
         <div className="faq-container">
           <div className="contact-image-half"></div>
           <div className="empty-half">
             <div className="empty-half-text-container">
-              <p className="empty-half-text">
+              <p
+                data-aos="fade-in"
+                data-aos-delay="500"
+                className="empty-half-text"
+              >
                 — Questions? Refer to our FAQ or contact us! —
               </p>
             </div>
           </div>
           <div className="text-overlay">
-            <div className="contact-image-text">SHOP INFORMATION</div>
+            <div
+              data-aos="fade-in"
+              data-aos-delay="500"
+              className="contact-image-text"
+            >
+              SHOP INFORMATION
+            </div>
             {/* <div className="contact-sub-text">QUESTIONS</div> */}
           </div>
         </div>
       </div>
       <div className="contact-section">
         <div className="contact-and-hours-section">
-          <div className="contact-container">
+          <div data-aos="slide-right" className="contact-container">
             <div className="contact-us">
               <div className="contact-titles"> Contact</div>
               <p className="contact-text">
@@ -50,7 +64,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="opening-hours">
+          <div data-aos="fade-down" className="opening-hours">
             <div className="contact-titles"> Hours</div>{' '}
             <div className="opening-day-time">
               <p className="contact-day">Monday:</p>
@@ -81,7 +95,7 @@ const Contact = () => {
               <p>9:00am – 6:30pm</p>
             </div>
           </div>
-          <div className="interactive-map-container">
+          <div data-aos="slide-left" className="interactive-map-container">
             <div className="interactive-map">
               <iframe
                 width="450"

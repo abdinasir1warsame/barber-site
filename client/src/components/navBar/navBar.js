@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NavLogo from './product-img/perfect-logo.png';
 import './navBar.css';
 import { UserContext } from '../userContext/usercontext';
@@ -8,12 +8,12 @@ import { UserContext } from '../userContext/usercontext';
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext);
 
-  const [toHomePage, setToHomepage] = useState(null);
+  const navigate = useNavigate();
 
   async function logout() {
     await axios.post('/logout');
     setUser(null);
-    setToHomepage('/');
+    navigate('/scores');
   }
 
   return (

@@ -5,7 +5,6 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import SuccessBookingModal from '../alert-modals/booking-complete';
-import NavBar from '../navBar/navBar';
 
 import './employee.css';
 import barberImage1 from '../../assets/employee-card/barber1.webp';
@@ -153,7 +152,7 @@ const Employee = () => {
 
   return (
     <div>
-      <div className=" employee-container">
+      <div data-aos="fade-down" className=" employee-container">
         <div className="col-sm-12">
           <div className="title-box ">
             <h3 id="book" className="title-a">
@@ -168,7 +167,7 @@ const Employee = () => {
         </div>
 
         <section className=" employee-section">
-          <div className="barber-card">
+          <div data-aos="fade-up" className="barber-card">
             <Link
               to={user ? '#' : '/login'}
               className="book-now"
@@ -230,7 +229,7 @@ const Employee = () => {
               </div>
             </div>
           </div>
-          <div className="barber-card">
+          <div data-aos="fade-up" data-aos-delay="150" className="barber-card">
             <Link
               to={user ? '#' : '/login'}
               className="book-now"
@@ -294,7 +293,7 @@ const Employee = () => {
               </div>
             </div>
           </div>
-          <div className="barber-card">
+          <div data-aos="fade-up" data-aos-delay="300" className="barber-card">
             <Link
               to={user ? '#' : '/login'}
               className="book-now"
@@ -359,30 +358,6 @@ const Employee = () => {
             </div>
           </div>
         </section>
-        {/* <div className="steps-container">
-          {' '}
-          <div class="steps-title ">
-            <p>
-              <span>STEP 1:</span> Choose a Barber
-            </p>
-          </div>
-          <div className="step-arrow">
-            <i class="arrow-icon fa-solid fa-arrow-right"></i>
-          </div>
-          <div class="steps-title">
-            <p>
-              <span>STEP 2:</span> Choose a Time
-            </p>
-          </div>
-          <div className="step-arrow">
-            <i class="arrow-icon fa-solid fa-arrow-right"></i>
-          </div>
-          <div class="steps-title">
-            <p>
-              <span>STEP 3:</span> Choose a Service
-            </p>
-          </div>
-        </div> */}
 
         <div className="section-sep2"></div>
       </div>

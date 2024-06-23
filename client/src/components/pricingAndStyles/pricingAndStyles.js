@@ -6,7 +6,7 @@ import CarouselComponent from './styles';
 const PricingAndStylesPage = () => {
   return (
     <div>
-      <div className="col-sm-12">
+      <div data-aos="fade-down" data-aos-duration="1500" className="col-sm-12">
         <div className="title-box5 ">
           <h3 className="title-a"> Signature Cuts and Prices</h3>
           <p className="subtitle-a">

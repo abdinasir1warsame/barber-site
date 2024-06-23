@@ -78,7 +78,7 @@ function CarouselComponent() {
   ];
 
   return (
-    <div className="styles-container">
+    <div data-aos="slide-left" data-aos-duration="1500" className="styles-container">
       <div className="carousel" ref={carouselRef}>
         <div className="list" ref={listItemRef}>
           {/* Mapping carousel items */}

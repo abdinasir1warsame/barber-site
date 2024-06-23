@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import axios from 'axios';
 
 import Loader from './components/loader/loader';
@@ -15,6 +17,7 @@ axios.defaults.baseURL = 'https://barber-site-api.vercel.app';
 axios.defaults.withCredentials = true;
 
 function App() {
+  AOS.init();
   const [showLoader, setShowLoader] = useState(true);
   const location = useLocation();
 

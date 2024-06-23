@@ -3,7 +3,7 @@ import './faq.css';
 
 const Faq = () => {
   return (
-    <div>
+    <div data-aos="fade-up">
       <div className="col-sm-12">
         <div className="title-box3 ">
           <h3 className="title-a">Got Questions? We Have Answers!</h3>
@@ -17,19 +17,27 @@ const Faq = () => {
 
       <div className=" faq-title-section">
         <div className="faq-container">
-          <div className="image-half"></div>
+          <div
+            data-aos="fade-down"
+            data-aos-delay="250"
+            className="image-half"
+          ></div>
           <div className="empty-half"></div>
           <div className="text-overlay">
-            <div className="main-text">FREQUENTLY ASKED</div>
+            <div data-aos="fade-in" data-aos-delay="500" className="main-text">
+              FREQUENTLY ASKED
+            </div>
 
-            <div className="sub-text">QUESTIONS</div>
+            <div data-aos="fade-in" data-aos-delay="500" className="sub-text">
+              QUESTIONS
+            </div>
           </div>
         </div>
       </div>
       <div className="faq-section">
         <div id="faq" className="faq-body">
           <div className="faq-list">
-            <div>
+            <div data-aos="fade-up" data-aos-delay="250">
               <details open title="How can I book an appointment?">
                 <summary>How can I book an appointment?</summary>
                 <p className="faq-content">
@@ -38,7 +46,7 @@ const Faq = () => {
                 </p>
               </details>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="350">
               <details title="What services do you offer?">
                 <summary>What services do you offer?</summary>
                 <p className="faq-content">
@@ -47,7 +55,7 @@ const Faq = () => {
                 </p>
               </details>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="450">
               <details title="What are your operating hours?">
                 <summary>What are your operating hours?</summary>
                 <p className="faq-content">
@@ -56,7 +64,7 @@ const Faq = () => {
                 </p>
               </details>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="550">
               <details title="Do I need to bring anything with me to my appointment?">
                 <summary>Do I need to bring anything with me ?</summary>
                 <p className="faq-content">
@@ -65,7 +73,7 @@ const Faq = () => {
                 </p>
               </details>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="650">
               <details title="Can I walk in for a haircut or should I make an appointment?">
                 <summary>Can I walk in for a haircut ?</summary>
                 <p className="faq-content">
@@ -74,7 +82,7 @@ const Faq = () => {
                 </p>
               </details>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="750">
               <details title="What are your sanitation protocols?">
                 <summary>What are your sanitation protocols?</summary>
                 <p className="faq-content">
