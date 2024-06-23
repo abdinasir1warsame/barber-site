@@ -1,20 +1,27 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link'; // Ensure this import is from 'react-router-hash-link'
 import NavLogo from './product-img/perfect-logo.png';
 import './navBar.css';
 import { UserContext } from '../userContext/usercontext';
-// import { Navigate } from 'react-router-dom';
+
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext);
-
-  const [toHomePage, setToHomepage] = useState(null);
 
   async function logout() {
     await axios.post('/logout');
     setUser(null);
-    setToHomepage('/');
+    // Handle post-logout redirection or other logic if needed
   }
+
+  // Function to close the menu
+  const closeMenu = () => {
+    const menuCheckbox = document.getElementById('menu');
+    if (menuCheckbox) {
+      menuCheckbox.checked = false;
+    }
+  };
 
   return (
     <div>
@@ -33,9 +40,9 @@ const NavBar = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="#fff"
-              stroke-width="2"
-              stroke-linecap="butt"
-              stroke-linejoin="arcs"
+              strokeWidth="2"
+              strokeLinecap="butt"
+              strokeLinejoin="arcs"
             >
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -53,9 +60,9 @@ const NavBar = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="butt"
-                  stroke-linejoin="arcs"
+                  strokeWidth="2"
+                  strokeLinecap="butt"
+                  strokeLinejoin="arcs"
                 >
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -65,12 +72,13 @@ const NavBar = () => {
             </div>
             <ul>
               <li>
-                <label>Home</label>
-              </li>
-              <li>
                 <label>Profile</label>
               </li>
-
+              <li>
+                <Link to={'./bookings'} onClick={closeMenu}>
+                  <label>My Bookings</label>{' '}
+                </Link>
+              </li>
               <li>
                 <label className="a-label__chevron" htmlFor="item-2">
                   Our Products
@@ -90,9 +98,9 @@ const NavBar = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="#000000"
-                        stroke-width="2"
-                        stroke-linecap="butt"
-                        stroke-linejoin="arcs"
+                        strokeWidth="2"
+                        strokeLinecap="butt"
+                        strokeLinejoin="arcs"
                       >
                         <path d="M19 12H6M12 5l-7 7 7 7" />
                       </svg>
@@ -101,38 +109,37 @@ const NavBar = () => {
                   </div>
                   <ul>
                     <li>
-                      <a href="#products">
+                      <Link smooth to="/#products" onClick={closeMenu}>
                         <label>Beard Oil</label>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#products">
+                      <Link smooth to="/#products" onClick={closeMenu}>
                         <label>Hair Comb</label>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#products">
+                      <Link smooth to="/#products" onClick={closeMenu}>
                         <label>Hair Brush</label>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#products">
+                      <Link smooth to="/#products" onClick={closeMenu}>
                         <label>Hair Sponge</label>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#products">
+                      <Link smooth to="/#products" onClick={closeMenu}>
                         <label>Hair Oil</label>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
-                <label>Bookings</label>
-              </li>
-              <li>
-                <label>Contact us</label>
+                <Link smooth to="/#contact" onClick={closeMenu}>
+                  <label>Contact Us</label>
+                </Link>
               </li>
               <li>
                 <label>Faq us</label>
@@ -142,24 +149,28 @@ const NavBar = () => {
                   <label>Log Out</label>
                 </li>
               )}
-              {!user && (
-                <Link to={'/login'}>
-                  <li className="login-mobile">
-                    <label>Log In</label>
-                  </li>
-                </Link>
-              )}
-              {!user && (
-                <Link to={'/signUp'}>
-                  <li>
-                    <label>Sign Up</label>
-                  </li>
-                </Link>
-              )}
+              <div className="login-signup-container">
+                {!user && (
+                  <Link to={'/login'} onClick={closeMenu}>
+                    <li>
+                      <label>Log In</label>
+                    </li>
+                  </Link>
+                )}
+                {!user && (
+                  <Link to={'/signUp'} onClick={closeMenu}>
+                    <li>
+                      <label>Sign Up</label>
+                    </li>
+                  </Link>
+                )}
+              </div>
             </ul>
           </div>
         </nav>
-        <div className="mobile-title">WARSAME'S</div>
+        <Link to={'/'} className="mobile-title">
+          WARSAME'S
+        </Link>
         <div className="mobile-logo-wrapper">
           <img src={NavLogo} alt="" className="mobile-logo" />
         </div>
@@ -167,32 +178,30 @@ const NavBar = () => {
 
       <section className="navigation-bar">
         <div className="nav-items">
-          <div className="navbar-logo">WARSAME'S</div>
+          <Link to={'/'} className="navbar-logo">
+            WARSAME'S
+          </Link>
           <div className="first-half">
             <ul className="navigation-list">
-              <li>Home</li>
-
-              <a href="#products">
-                {' '}
+              <Link smooth to="/#products" onClick={closeMenu}>
                 <li>Our Products</li>
-              </a>
-
-              <a href="#contact">
+              </Link>
+              <Link to={'/bookings'} onClick={closeMenu}>
+                <li>My Bookings</li>
+              </Link>
+              <Link smooth to="/#contact" onClick={closeMenu}>
                 <li>Contact Us</li>
-              </a>
+              </Link>
             </ul>
           </div>
           <div className="second-half">
-            <Link to={'/login'} className="login-sign-btn">
-              {' '}
+            <Link to={'/login'} className="login-sign-btn" onClick={closeMenu}>
               {!user && <li>Login</li>}
             </Link>
-            <Link to={'/signUp'} className="login-sign-btn">
-              {' '}
+            <Link to={'/signUp'} className="login-sign-btn" onClick={closeMenu}>
               {!user && <li>Sign Up</li>}
             </Link>
             <div onClick={logout} className="login-sign-btn">
-              {' '}
               {!!user && <li className="logOutBtn">LOG OUT</li>}
             </div>
           </div>

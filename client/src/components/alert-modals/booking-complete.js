@@ -50,7 +50,7 @@ const SuccessBookingModal = ({ bookingId }) => {
           </p>
           <br></br>
 
-          <Link to={'./login'}>
+          <Link to={'./bookings'}>
             <div id="contBtn">View Booking</div>
           </Link>
         </div>

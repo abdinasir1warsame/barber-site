@@ -11,6 +11,7 @@ import IndexPage from './pages/indexPage';
 import LoginPage from './pages/loginPage';
 import SignUpPage from './pages/signUpPage';
 import { UserContextProvider } from './components/userContext/usercontext';
+import Bookings from './pages/bookings';
 axios.defaults.baseURL = 'http://192.168.182.1:4000';
 axios.defaults.withCredentials = true;
 
@@ -42,6 +43,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<IndexPage />}></Route>
+              <Route path="/Bookings" element={<Bookings />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/signUp" element={<SignUpPage />}></Route>
             </Route>

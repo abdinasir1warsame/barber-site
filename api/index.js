@@ -103,5 +103,18 @@ app.post('/bookings', async (req, res) => {
     res.status(401).json({ error: 'Unauthorized' });
   }
 });
+app.get('/bookings', async (req, res) => {
+  try {
+    // Verify the JWT token and extract the user information
+    const decodedToken = jwt.verify(req.cookies.token, jwtSecret);
+    const userEmail = decodedToken.email;
 
+    // Find bookings that belong to the authenticated user
+    const bookings = await Booking.find({ userEmail });
+
+    res.json(bookings);
+  } catch (error) {
+    res.status(401).json({ error: 'Unauthorized' });
+  }
+});
 app.listen(4000);
