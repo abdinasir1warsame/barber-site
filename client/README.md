@@ -56,12 +56,12 @@ To get started with the Warsame's Barber app, follow these steps:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/warsames-barber.git
+   git clone https://github.com/abdinasir1warsame/warsames-barber.git
    ```
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd warsames-barber
+   cd barber-app
    ```
 
 3. **Install Dependencies**
