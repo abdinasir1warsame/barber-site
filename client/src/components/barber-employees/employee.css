@@ -1381,7 +1381,7 @@ thead tr:nth-child(3) th {
   .barber-card .barber-details {
     position: absolute;
     width: 100%;
-    bottom: -250px;
+    bottom: -270px;
     left: 0;
     z-index: 2;
     padding: 20px;
