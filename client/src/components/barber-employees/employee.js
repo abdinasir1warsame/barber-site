@@ -31,13 +31,17 @@ const Employee = () => {
     const date = selectedDate ? selectedDate.toISOString().split('T')[0] : '';
     const time = activeTimeSlot !== null ? timeSlots[activeTimeSlot] : '';
     const barberName = selectedBarberName;
-    const response = await axios.post('/bookings', {
-      time,
-      date,
-      service,
-      barberName,
-    }, { withCredentials: true }); 
-    
+    const response = await axios.post(
+      '/bookings',
+      {
+        time,
+        date,
+        service,
+        barberName,
+      },
+      { withCredentials: true }
+    );
+
     const bookingId = response.data._id.slice(0, 15);
     setShowSuccessModal(true);
     setBookingId(bookingId);
@@ -262,7 +266,7 @@ const Employee = () => {
 
               <div className="barber-details">
                 <img src={cardLogo} className="barber-logo" alt="" />
-                <h4 className="barber-name">Abdi Somali</h4>
+                <h4 className="barber-name">Latif Warsame</h4>
                 <h4 className="barber-description">
                   Sleek Trims, Signature Looks
                 </h4>

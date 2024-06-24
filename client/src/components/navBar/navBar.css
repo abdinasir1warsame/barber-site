@@ -20,6 +20,7 @@ li {
   font-size: 2.5rem;
   font-weight: bolder;
   text-shadow: 0 8px 16px rgba(210, 180, 9, 0.884);
+  text-decoration: none;
 }
 .nav-items {
   display: flex;

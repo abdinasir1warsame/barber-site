@@ -75,7 +75,7 @@ const NavBar = () => {
                 <label>Profile</label>
               </li>
               <li>
-                <Link to={'./bookings'} onClick={closeMenu}>
+                <Link to={user ? './bookings' : '/login'} onClick={closeMenu}>
                   <label>My Bookings</label>{' '}
                 </Link>
               </li>
@@ -186,7 +186,7 @@ const NavBar = () => {
               <Link smooth to="/#products" onClick={closeMenu}>
                 <li>Our Products</li>
               </Link>
-              <Link to={'/bookings'} onClick={closeMenu}>
+              <Link to={user ? './bookings' : '/login'} onClick={closeMenu}>
                 <li>My Bookings</li>
               </Link>
               <Link smooth to="/#contact" onClick={closeMenu}>
