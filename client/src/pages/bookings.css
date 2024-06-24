@@ -169,6 +169,13 @@
   .booking-card__details {
     font-size: 15px;
   }
+
+  .title-a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+  }
 }
 @media (max-width: 390px) {
   .booking-card {
