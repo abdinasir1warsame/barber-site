@@ -10,23 +10,32 @@ require('dotenv').config();
 const app = express();
 
 const bcryptSalt = bcrypt.genSaltSync(12);
-const jwtSecret = 'your_jwt_secret_here'; // Replace with a strong random secret
+const jwtSecret = process.env.JWT_SECRET || 'your_jwt_secret_here'; // Use environment variables for secrets
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(
   cors({
-    credentials: true,
-
-    origin: 'https://barber-site-seven.vercel.app',
-    methods: ['POST', 'GET'],
+    origin: 'https://barber-site-seven.vercel.app', // Frontend domain
+    methods: ['GET', 'POST'],
+    credentials: true, // Allow cookies to be sent with requests
   })
 );
 
 mongoose.connect(
-  'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
+  process.env.MONGO_URI ||
+    'mongodb+srv://awarsame1993:F5nkwbTFHhRP1sc2@cluster0.f9mvien.mongodb.net/barber-app'
 );
+
 app.post('/logout', (req, res) => {
-  res.cookie('token', '').json(true);
+  res
+    .cookie('token', '', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'None',
+      maxAge: 0, // Clear the cookie
+    })
+    .json(true);
 });
 
 app.post('/signUp', async (req, res) => {
@@ -52,75 +61,77 @@ app.post('/login', async (req, res) => {
       jwt.sign(
         { email: userDoc.email, id: userDoc._id },
         jwtSecret,
-        {},
+        { expiresIn: '1h' }, // Token expires in 1 hour
         (err, token) => {
           if (err) throw err;
-          res.cookie('token', token).json(userDoc);
+          res
+            .cookie('token', token, {
+              httpOnly: true,
+              secure: true, // Set to true if using HTTPS
+              sameSite: 'None', // Necessary for cross-site cookies
+              maxAge: 3600000, // 1 hour in milliseconds
+            })
+            .json(userDoc);
         }
       );
     } else {
-      res.json('password not ok');
+      res.status(401).json({ message: 'Invalid password' });
     }
   } else {
-    res.status(422).json('user not found');
+    res.status(422).json({ message: 'User not found' });
   }
 });
-app.options('/profile', (req, res) => {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://barber-site-seven.vercel.app'
-  );
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.sendStatus(204); // No content
-});
-// Protected route using JWT
+
 app.get('/profile', (req, res) => {
   const { token } = req.cookies;
   if (token) {
     jwt.verify(token, jwtSecret, {}, async (err, userData) => {
-      if (err) throw err;
+      if (err) return res.status(403).json({ message: 'Invalid token' });
       const { name, email, _id } = await User.findById(userData.id);
       res.json({ name, email, _id });
     });
   } else {
-    res.json(null);
+    res.status(401).json({ message: 'No token provided' });
   }
 });
 
 app.post('/bookings', async (req, res) => {
-  const { date, time, service, barberName } = req.body;
-  try {
-    const decodedToken = jwt.verify(req.cookies.token, jwtSecret);
+  const { token } = req.cookies;
+  if (token) {
+    try {
+      const decodedToken = jwt.verify(token, jwtSecret);
+      const { date, time, service, barberName } = req.body;
+      const userEmail = decodedToken.email;
 
-    const userEmail = decodedToken.email;
+      const user = await User.findOne({ email: userEmail });
+      const userName = user ? user.name : null;
 
-    // Look up the user by email to get the name
-    const user = await User.findOne({ email: userEmail });
-    const userName = user ? user.name : null;
-
-    Booking.create({ date, time, service, barberName, userName, userEmail })
-      .then((doc) => {
-        res.json(doc);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
+      const bookingDoc = await Booking.create({
+        date,
+        time,
+        service,
+        barberName,
+        userName,
+        userEmail,
       });
-  } catch (error) {
-    res.status(401).json({ error: 'Unauthorized' });
+      res.json(bookingDoc);
+    } catch (error) {
+      res.status(401).json({ message: 'Unauthorized' });
+    }
+  } else {
+    res.status(401).json({ message: 'No token provided' });
   }
-});
-// Define all your route handlers and middleware here
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something went wrong!');
 });
 
 app.get('/', (req, res) => {
   res.send('Server connection successful!');
 });
 
-app.listen(4000);
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
+app.listen(4000, () => {
+  console.log('Server is running on port 4000');
+});

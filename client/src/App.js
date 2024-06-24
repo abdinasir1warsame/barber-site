@@ -4,9 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
-
 import Loader from './components/loader/loader';
-
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './pages/layout';
 import IndexPage from './pages/indexPage';
@@ -14,6 +12,8 @@ import Bookings from './pages/bookings';
 import LoginPage from './pages/loginPage';
 import SignUpPage from './pages/signUpPage';
 import { UserContextProvider } from './components/userContext/usercontext';
+
+// Ensure Axios is configured to include credentials
 axios.defaults.baseURL = 'https://barber-site-api.vercel.app';
 axios.defaults.withCredentials = true;
 
@@ -23,15 +23,13 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if it's the index page
-    const isIndexPage = location.pathname === '/'; // Assuming index route is "/"
-    // Check if it's the first load or refresh of the index page
+    const isIndexPage = location.pathname === '/';
     const isFirstLoadOrRefresh = isIndexPage && !location.state;
 
     if (isFirstLoadOrRefresh) {
       setTimeout(() => {
         setShowLoader(false);
-      }, 2500); // 5 seconds
+      }, 2500); // Show loader for 2.5 seconds
     } else {
       setShowLoader(false);
     }
