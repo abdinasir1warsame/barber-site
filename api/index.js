@@ -77,24 +77,15 @@ app.options('/profile', (req, res) => {
 });
 // Protected route using JWT
 app.get('/profile', (req, res) => {
-  // Check for the presence of token in cookies
   const { token } = req.cookies;
   if (token) {
-    // If token exists, verify it
-    jwt.verify(token, jwtSecret, {}, (err, userData) => {
-      if (err) {
-        console.error(err); // Log any errors
-        return res.status(401).json({ message: 'Unauthorized' });
-      } else {
-        const messages = ['Hello!', 'Welcome!', 'How are you today?'];
-        const randomMessage =
-          messages[Math.floor(Math.random() * messages.length)];
-        res.json({ message: randomMessage });
-      }
+    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+      if (err) throw err;
+      const { name, email, _id } = await User.findById(userData.id);
+      res.json({ name, email, _id });
     });
   } else {
-    // If no token is found, send an appropriate response (e.g., unauthorized)
-    res.status(401).json({ message: 'Unauthorized' });
+    res.json(null);
   }
 });
 
