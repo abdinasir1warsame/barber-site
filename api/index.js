@@ -96,33 +96,41 @@ app.get('/profile', (req, res) => {
 });
 
 app.post('/bookings', async (req, res) => {
-  const { token } = req.cookies;
-  if (token) {
-    try {
-      const decodedToken = jwt.verify(token, jwtSecret);
-      const { date, time, service, barberName } = req.body;
-      const userEmail = decodedToken.email;
+  const { date, time, service, barberName } = req.body;
+  try {
+    const decodedToken = jwt.verify(req.cookies.token, jwtSecret);
 
-      const user = await User.findOne({ email: userEmail });
-      const userName = user ? user.name : null;
+    const userEmail = decodedToken.email;
 
-      const bookingDoc = await Booking.create({
-        date,
-        time,
-        service,
-        barberName,
-        userName,
-        userEmail,
+    // Look up the user by email to get the name
+    const user = await User.findOne({ email: userEmail });
+    const userName = user ? user.name : null;
+
+    Booking.create({ date, time, service, barberName, userName, userEmail })
+      .then((doc) => {
+        res.json(doc);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
-      res.json(bookingDoc);
-    } catch (error) {
-      res.status(401).json({ message: 'Unauthorized' });
-    }
-  } else {
-    res.status(401).json({ message: 'No token provided' });
+  } catch (error) {
+    res.status(401).json({ error: 'Unauthorized' });
   }
 });
+app.get('/bookings', async (req, res) => {
+  try {
+    // Verify the JWT token and extract the user information
+    const decodedToken = jwt.verify(req.cookies.token, jwtSecret);
+    const userEmail = decodedToken.email;
 
+    // Find bookings that belong to the authenticated user
+    const bookings = await Booking.find({ userEmail });
+
+    res.json(bookings);
+  } catch (error) {
+    res.status(401).json({ error: 'Unauthorized' });
+  }
+});
 app.get('/', (req, res) => {
   res.send('Server connection successful!');
 });
