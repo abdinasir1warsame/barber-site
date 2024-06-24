@@ -9,7 +9,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     if (!user) {
       axios
-        .get('/profile', { credentials: 'include' }) // Add credentials option here
+        .get('/profile', { withCredentials: true }) // Add credentials option here
         .then(({ data }) => {
           console.log(data);
           setUser(data);
