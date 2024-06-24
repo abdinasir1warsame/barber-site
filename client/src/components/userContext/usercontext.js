@@ -7,22 +7,19 @@ export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Fetch user data on component mount
-    axios
-      .get('/profile', { withCredentials: true })
-      .then(({ data }) => {
-        console.log(data);
-        if (data) {
+    if (!user) {
+      axios
+        .get('/profile', { credentials: 'include' }) // Add credentials option here
+        .then(({ data }) => {
+          console.log(data);
           setUser(data);
-        } else {
-          setUser(null); // No user data means unauthenticated
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching user data:', error);
-        setUser(null); // Handle error by setting user to null or an error message
-      });
-  }, []); // Empty dependency array ensures this runs once on mount
+        })
+        .catch((error) => {
+          console.error('Error fetching user data:', error);
+          setUser(null); // Handle error by setting user to null or an error message
+        });
+    }
+  }, [user]); // Include user in the dependency array
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
