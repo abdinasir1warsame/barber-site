@@ -148,11 +148,11 @@ const Employee = () => {
     '6:00 PM',
   ];
   const services = [
-    { name: 'Haircut & Styles', price: '£ 35.00' },
-    { name: 'Haircut & Styles', price: '£ 40.00' },
-    { name: 'Haircut & Styles', price: '£ 45.00' },
-    { name: 'Haircut & Styles', price: '£ 50.00' },
-    { name: 'Haircut & Styles', price: '£ 55.00' },
+    { name: 'Skin fade', price: '£ 35.00' },
+    { name: 'Head Shave', price: '£ 40.00' },
+    { name: 'All Scissors & style', price: '£ 45.00' },
+    { name: 'Hair & Beard', price: '£ 50.00' },
+    { name: 'Father & Son', price: '£ 55.00' },
   ];
 
   return (

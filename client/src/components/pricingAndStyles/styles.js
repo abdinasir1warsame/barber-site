@@ -59,26 +59,38 @@ function CarouselComponent() {
 
   // Mocked data for carousel items
   const carouselItems = [
-    { image: carrousel1, author: 'Blended to perfection', topic: 'Head Shave' },
+    { image: carrousel1, author: 'Blended to perfection', topic: 'Skin fade' },
     {
       image: carrousel2,
-      author: 'Blended to perfection',
+      author: 'Precision and sharpness with every stroke',
       topic: 'Straight Razor',
     },
-    { image: carrousel3, author: 'Blended to perfection', topic: 'Beard trim' },
-    { image: carrousel4, author: 'Blended to perfection', topic: 'Skin fade' },
+    {
+      image: carrousel3,
+      author: 'Expert grooming for a well-defined look',
+      topic: 'Beard trim',
+    },
+    {
+      image: carrousel4,
+      author: 'Smooth and clean for a bold statement',
+      topic: 'Head Shave',
+    },
   ];
 
   // Mocked data for thumbnail items
   const thumbnailItems = [
-    { image: carrousel2, title: 'Name Slider', description: 'Description' },
-    { image: carrousel3, title: 'Name Slider', description: 'Description' },
-    { image: carrousel4, title: 'Name Slider', description: 'Description' },
-    { image: carrousel1, title: 'Name Slider', description: 'Description' },
+    { image: carrousel2, title: 'Straight Razor', description: 'Style 2' },
+    { image: carrousel3, title: 'Beard trim', description: 'Style 3' },
+    { image: carrousel4, title: 'Head Shave', description: 'Style 4' },
+    { image: carrousel1, title: 'Skin fade', description: 'Style 1' },
   ];
 
   return (
-    <div data-aos="slide-left" data-aos-duration="1500" className="styles-container">
+    <div
+      data-aos="slide-left"
+      data-aos-duration="1500"
+      className="styles-container"
+    >
       <div className="carousel" ref={carouselRef}>
         <div className="list" ref={listItemRef}>
           {/* Mapping carousel items */}

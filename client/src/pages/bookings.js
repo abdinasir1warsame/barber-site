@@ -39,6 +39,7 @@ const Bookings = () => {
           <div className="line-mf"></div>
         </div>
       </div>
+
       {bookings.map((booking, index) => (
         <div className="booking-card" key={index}>
           <div className="booking-card__barber-info">
